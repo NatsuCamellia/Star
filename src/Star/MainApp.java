@@ -7,6 +7,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class MainApp extends Application {
     
     private Stage primaryStage;
@@ -16,7 +18,7 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("繁星推薦");
         this.primaryStage.setResizable(true);
-        this.primaryStage.getIcons().add(new Image("file:app/resources/images/icon.png"));
+        this.primaryStage.getIcons().add(new Image(MainApp.class.getResourceAsStream("images/icon.png")));
 
         initRootLayout();
     }
