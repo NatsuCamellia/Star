@@ -1,7 +1,7 @@
 # Star 繁星推薦歷年結果
 
 ## 版本與下載
-* 最新版本 v1.0
+* 最新版本 v1.0.1
 * 支援平台 Windows
 * 下載連結 https://github.com/NatsuCamellia/Star/releases/latest
 * 進入連結後，到最下方的 Assets 下載
