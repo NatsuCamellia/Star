@@ -1,6 +1,5 @@
 package Star.util;
 
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 import Star.MainApp;
