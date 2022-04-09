@@ -6,11 +6,10 @@ import Star.MainApp;
 import com.opencsv.CSVReader;
 
 public class CSVReaderUtil {
-
-    private static String csv_path = "csv/%s/%s_%s.csv";
     
     public static CSVReader getSchoolReader(String year, String school) {
         try {
+            String csv_path = "csv/%s/%s_%s.csv";
             String path = String.format(csv_path, year, year, school);
             InputStreamReader isr = new InputStreamReader(MainApp.class.getResourceAsStream(path));
             CSVReader reader = new CSVReader(isr);
