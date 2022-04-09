@@ -1,12 +1,9 @@
 # Star 繁星推薦歷年結果
 
 ## 版本與下載
-* 最新版本 v1.0
+* 最新版本 v1.0.1 https://github.com/NatsuCamellia/Star/releases/latest
 * 支援平台 Windows
-* 下載連結 https://github.com/NatsuCamellia/Star/releases/latest
-* 進入連結後，到最下方的 Assets 下載安裝檔
-* 安裝檔格式 exe、msi、zip
-
+* 下載連結 https://github.com/NatsuCamellia/Star/releases/download/v1.0.1/Star-1.0.1.zip
 
 ## 功能與特色
 * 查詢四年內的繁星結果
@@ -29,4 +26,3 @@
 
 * 大學名稱、校系名稱與代碼，皆以111年為準。
 * 新出現或是更名的校系，將無法查詢。
-* 開啟後請調整視窗大小，以看到第七個篩選。
