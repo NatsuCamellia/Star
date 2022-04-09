@@ -7,8 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.File;
-
 public class MainApp extends Application {
     
     private Stage primaryStage;
