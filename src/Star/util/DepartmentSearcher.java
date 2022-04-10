@@ -49,10 +49,23 @@ public class DepartmentSearcher {
         String[] ranks = data[4].split("\n");
         String rank_template;
         if (year.equals("111")) {
-            rank_template = "國文\t%s\n英文\t%s\n數學A\t%s\n數學B\t%s\n自然\t%s\n社會\t%s\n英聽\t%s";
+            rank_template = """
+                    國文\t%s
+                    英文\t%s
+                    數學A\t%s
+                    數學B\t%s
+                    自然\t%s
+                    社會\t%s
+                    英聽\t%s""";
             rank += String.format(rank_template, ranks[0], ranks[1], ranks[2], ranks[3], ranks[4], ranks[5], ranks[6]);
         } else {
-            rank_template = "國文\t%s\n英文\t%s\n數學\t%s\n自然\t%s\n社會\t%s\n英聽\t%s";
+            rank_template = """
+                    國文\t%s
+                    英文\t%s
+                    數學\t%s
+                    自然\t%s
+                    社會\t%s
+                    英聽\t%s""";
             rank += String.format(rank_template, ranks[0], ranks[1], ranks[2], ranks[3], ranks[4], ranks[6]);
         }
         
@@ -76,11 +89,11 @@ public class DepartmentSearcher {
             for (int i = 0; i < filters.length; i++) {
                 fil2 += "\n" + filters[i] + "\t" + fil_2[i];
             }
+            fil2 = fil2.replace("學測數A", "學測數Ａ").replace("學測數B", "學測數Ｂ");
         // 無第二輪篩選
         } else {
             fil2 = "無第二輪";
         }
-        fil2 = fil2.replace("學測數A", "學測數Ａ").replace("學測數B", "學測數Ｂ");
 
         return new Department(rank, fil1, fil2);
     }
