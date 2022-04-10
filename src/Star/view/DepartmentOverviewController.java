@@ -43,6 +43,7 @@ public class DepartmentOverviewController {
     String selectedSchool;
     String selectedSchoolCode;
     String selectedDepartment;
+    String selectedDepartmentName;
     
     public void initialize() {
         schoolList = ListViewUtil.getSchoolList();
@@ -56,7 +57,8 @@ public class DepartmentOverviewController {
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
             selectedDepartment = departmentListView.getSelectionModel().getSelectedItem();
             if (selectedDepartment == null) return;
-            updateGrid(selectedSchoolCode, selectedDepartment);
+            selectedDepartmentName = selectedDepartment.substring(6);
+            updateGrid(selectedSchoolCode, selectedDepartmentName);
         });
     }
 
@@ -65,14 +67,13 @@ public class DepartmentOverviewController {
         departmentListView.getItems().setAll(departmentList);
     }
 
-    public void updateGrid(String schoolCode, String name) {
+    public void updateGrid(String schoolCode, String departmentName) {
         try {
-            String department = name.substring(6);
             
             DepartmentSearcher searcher = new DepartmentSearcher();
             Department[] departments = new Department[4];
             for (int year = 108; year <= 111; year++) {
-                departments[year - 108] = searcher.search(String.valueOf(year), schoolCode, department);
+                departments[year - 108] = searcher.search(String.valueOf(year), schoolCode, departmentName);
             }
             
             rank_108.setText(departments[0].getRank());
