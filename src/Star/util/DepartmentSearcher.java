@@ -6,14 +6,14 @@ import Star.model.Department;
 
 public class DepartmentSearcher {
 
-    public Department search(String year, String school, String department) {
+    public Department search(String year, String schoolCode, String department) {
 
-        CSVReader reader = CSVReaderUtil.getSchoolReader(year, school);
+        CSVReader reader = CSVReaderUtil.getSchoolReader(year, schoolCode);
 
         // 取得校系資料
         String[] data = searchByDepartment(department, reader);
 
-        if (data == null && school.equals("013")) {
+        if (data == null && schoolCode.equals("013")) {
             reader = CSVReaderUtil.getSchoolReader(year, "025");
             data = searchByDepartment(department, reader);
         }

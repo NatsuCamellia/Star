@@ -23,11 +23,10 @@ public class ListViewUtil {
         }
     }
 
-    public static String[] getDepartmentList(String school) {
+    public static String[] getDepartmentList(String schoolCode) {
         try {
             String str = "";
 
-            String schoolCode = school.substring(0, 3);
             CSVReader reader = CSVReaderUtil.getSchoolReader("111", schoolCode);
 
             String[] data;

@@ -41,6 +41,7 @@ public class DepartmentOverviewController {
     String[] schoolList;
     String[] departmentList;
     String selectedSchool;
+    String selectedSchoolCode;
     String selectedDepartment;
     
     public void initialize() {
@@ -48,29 +49,30 @@ public class DepartmentOverviewController {
         schoolListView.getItems().addAll(schoolList);
         schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
             selectedSchool = schoolListView.getSelectionModel().getSelectedItem();
-            updateDepartmentList(selectedSchool);
+            selectedSchoolCode = selectedSchool.substring(0, 3);
+            updateDepartmentList(selectedSchoolCode);
         });
         
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
             selectedDepartment = departmentListView.getSelectionModel().getSelectedItem();
             if (selectedDepartment == null) return;
-            updateGrid(selectedSchool, selectedDepartment);
+            updateGrid(selectedSchoolCode, selectedDepartment);
         });
     }
 
-    public void updateDepartmentList(String school) {
-        departmentList = ListViewUtil.getDepartmentList(school);
+    public void updateDepartmentList(String schoolCode) {
+        departmentList = ListViewUtil.getDepartmentList(schoolCode);
         departmentListView.getItems().setAll(departmentList);
     }
 
-    public void updateGrid(String school, String name) {
+    public void updateGrid(String schoolCode, String name) {
         try {
             String department = name.substring(6);
             
             DepartmentSearcher searcher = new DepartmentSearcher();
             Department[] departments = new Department[4];
             for (int year = 108; year <= 111; year++) {
-                departments[year - 108] = searcher.search(String.valueOf(year), school, department);
+                departments[year - 108] = searcher.search(String.valueOf(year), schoolCode, department);
             }
             
             rank_108.setText(departments[0].getRank());
