@@ -12,7 +12,7 @@ public class DepartmentOverviewController {
     @FXML
     private ListView<String> schoolListView;
     @FXML
-    private ListView<String> codeListView;
+    private ListView<String> departmentListView;
     @FXML
     private Label rank_108;
     @FXML
@@ -39,7 +39,7 @@ public class DepartmentOverviewController {
     private Label fil2_111;
 
     String[] schoolList;
-    String[] codeList;
+    String[] departmentList;
     String selectedSchool;
     String selectedDepartment;
     
@@ -47,24 +47,22 @@ public class DepartmentOverviewController {
         schoolList = ListViewUtil.getSchoolList();
         schoolListView.getItems().addAll(schoolList);
         schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
-            selectedSchool = schoolListView.getSelectionModel().getSelectedItem().substring(0, 3);
-            updateCodeList(selectedSchool);
+            selectedSchool = schoolListView.getSelectionModel().getSelectedItem();
+            updateDepartmentList(selectedSchool);
         });
         
-        codeListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
-            selectedDepartment = codeListView.getSelectionModel().getSelectedItem();
+        departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
+            selectedDepartment = departmentListView.getSelectionModel().getSelectedItem();
             if (selectedDepartment == null) return;
             updateGrid(selectedSchool, selectedDepartment);
         });
     }
 
-    public void updateCodeList(String school) {
-        
-        codeList = ListViewUtil.getDepartmentList(school);
-        codeListView.getItems().setAll(codeList);
+    public void updateDepartmentList(String school) {
+        departmentList = ListViewUtil.getDepartmentList(school);
+        departmentListView.getItems().setAll(departmentList);
     }
 
-    @FXML
     public void updateGrid(String school, String name) {
         try {
             String department = name.substring(6);

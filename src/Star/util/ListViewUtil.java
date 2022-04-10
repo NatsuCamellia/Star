@@ -27,7 +27,8 @@ public class ListViewUtil {
         try {
             String str = "";
 
-            CSVReader reader = CSVReaderUtil.getSchoolReader("111", school);
+            String schoolCode = school.substring(0, 3);
+            CSVReader reader = CSVReaderUtil.getSchoolReader("111", schoolCode);
 
             String[] data;
             while ((data = reader.readNext()) != null) {
