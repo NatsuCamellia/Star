@@ -31,7 +31,8 @@ public class DepartmentSearcher {
         String[] data = null;
         try {
             while ((data = reader.readNext()) != null) {
-                if (data[1].equals(department)) break;
+                String resultName = data[1].replace("\n", "");
+                if (resultName.equals(department)) break;
             }
             reader.close();
         } catch (Exception e) {
