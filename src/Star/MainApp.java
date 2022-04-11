@@ -24,6 +24,7 @@ public class MainApp extends Application {
     public void initRootLayout() {
         try {
             FXMLLoader loader = new FXMLLoader();
+
             loader.setLocation(MainApp.class.getResource("view/DepartmentOverview.fxml"));
             AnchorPane rootLayout = loader.load();
 
