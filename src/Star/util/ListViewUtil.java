@@ -31,7 +31,9 @@ public class ListViewUtil {
 
             String[] data;
             while ((data = reader.readNext()) != null) {
-                str += String.format("%s %s,", data[0], data[1]);
+                String code = data[0];
+                String name = data[1].replace("\n", "");
+                str += String.format("%s %s,", code, name);
             }
             reader.close();
 
