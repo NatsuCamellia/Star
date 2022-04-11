@@ -4,8 +4,11 @@ import Star.model.Department;
 import Star.util.DepartmentSearcher;
 import Star.util.ListViewUtil;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+
+import java.io.*;
 
 public class DepartmentOverviewController {
     
@@ -38,42 +41,59 @@ public class DepartmentOverviewController {
     @FXML
     private Label fil2_111;
 
+    @FXML
+    private ListView<String> favorListView;
+    @FXML
+    private Button addFavorButton;
+    @FXML
+    private Button delFavorButton;
+    @FXML
+    private Label reminder;
+
     String[] schoolList;
     String[] departmentList;
     String selectedSchool;
     String selectedSchoolCode;
     String selectedDepartment;
     String selectedDepartmentName;
+    String currentSchoolDepartment;
     
     public void initialize() {
         schoolList = ListViewUtil.getSchoolList();
         schoolListView.getItems().addAll(schoolList);
         schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
             selectedSchool = schoolListView.getSelectionModel().getSelectedItem();
-            selectedSchoolCode = selectedSchool.substring(0, 3);
-            updateDepartmentList(selectedSchoolCode);
+            schoolSelected();
+            updateDepartmentList();
         });
         
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
+            if (departmentListView.getSelectionModel().getSelectedItem() == null) return;
             selectedDepartment = departmentListView.getSelectionModel().getSelectedItem();
-            if (selectedDepartment == null) return;
-            selectedDepartmentName = selectedDepartment.substring(6);
-            updateGrid(selectedSchoolCode, selectedDepartmentName);
+            departmentSelected();
+
+            favorListView.getSelectionModel().clearSelection();
+            updateGrid();
         });
+
+        String[] favorites = readFile();
+        if (favorites != null) favorListView.getItems().addAll(favorites);
+        favorListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {favorListViewSelected();});
+        addFavorButton.setOnAction((arg0) -> {addFavorite();});
+        delFavorButton.setOnAction((arg0) -> {deleteFavorite();});
     }
 
-    public void updateDepartmentList(String schoolCode) {
-        departmentList = ListViewUtil.getDepartmentList(schoolCode);
+    public void updateDepartmentList() {
+        departmentList = ListViewUtil.getDepartmentList(selectedSchoolCode);
         departmentListView.getItems().setAll(departmentList);
     }
 
-    public void updateGrid(String schoolCode, String departmentName) {
+    public void updateGrid() {
         try {
-            
             DepartmentSearcher searcher = new DepartmentSearcher();
             Department[] departments = new Department[4];
             for (int year = 108; year <= 111; year++) {
-                departments[year - 108] = searcher.search(String.valueOf(year), schoolCode, departmentName);
+                departments[year - 108] = searcher.search(String.valueOf(year), selectedSchoolCode, selectedDepartmentName);
             }
             
             rank_108.setText(departments[0].getRank());
@@ -89,8 +109,68 @@ public class DepartmentOverviewController {
             fil2_110.setText(departments[2].getFil2());
             fil2_111.setText(departments[3].getFil2());
 
+            reminder.setText(String.format("%s > %s", selectedSchool, selectedDepartment));
+            currentSchoolDepartment = selectedSchool + " > " +  selectedDepartment;
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void addFavorite() {
+        if (currentSchoolDepartment == null) return;
+        if (favorListView.getItems().contains(currentSchoolDepartment)) return;
+        favorListView.getItems().add(currentSchoolDepartment);
+        writeFile();
+    }
+
+    private void deleteFavorite() {
+        if (currentSchoolDepartment == null) return;
+        if (favorListView.getItems().contains(currentSchoolDepartment)) {
+            favorListView.getItems().remove(currentSchoolDepartment);
+        }
+        writeFile();
+    }
+
+    private void writeFile() {
+        try {
+            String[] favorites = favorListView.getItems().toArray(new String[0]);
+            FileOutputStream fileOut = new FileOutputStream("Favorite.dat");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(favorites);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private String[] readFile() {
+        try {
+            FileInputStream fileIn = new FileInputStream("Favorite.dat");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            return (String[]) in.readObject();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private void favorListViewSelected() {
+        if (favorListView.getSelectionModel().getSelectedItem() == null) return;
+
+        String[] selected = favorListView.getSelectionModel().getSelectedItem().split(" > ");
+        selectedSchool = selected[0];
+        schoolSelected();
+        selectedDepartment = selected[1];
+        departmentSelected();
+
+        departmentListView.getSelectionModel().clearSelection();
+        updateGrid();
+    }
+
+    private void schoolSelected() {
+        selectedSchoolCode = selectedSchool.substring(0, 3);
+    }
+
+    private void departmentSelected() {
+        selectedDepartmentName = selectedDepartment.substring(6);
     }
 }
