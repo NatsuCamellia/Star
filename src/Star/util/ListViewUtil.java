@@ -32,7 +32,7 @@ public class ListViewUtil {
             String[] data;
             while ((data = reader.readNext()) != null) {
                 String code = data[0];
-                String name = data[1].replace("\n", "");
+                String name = data[1];
                 str += String.format("%s %s,", code, name);
             }
             reader.close();
