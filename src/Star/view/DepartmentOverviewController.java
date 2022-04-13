@@ -128,6 +128,7 @@ public class DepartmentOverviewController {
 
     private void departmentViewSelected() {
         if (departmentListView.getSelectionModel().getSelectedItem() == null) return;
+        setSchool(schoolListView.getSelectionModel().getSelectedItem());
         setDepartment(departmentListView.getSelectionModel().getSelectedItem());
 
         favorListView.getSelectionModel().clearSelection();
