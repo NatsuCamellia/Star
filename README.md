@@ -12,7 +12,7 @@
 
 
 ## 版本與下載
-* 最新版本 [v1.1.1](https://github.com/NatsuCamellia/Star/releases/latest)
+* 最新版本 [v1.1.2](https://github.com/NatsuCamellia/Star/releases/latest)
 * 下載連結 
   * [MacOS v1.1.1](https://github.com/NatsuCamellia/Star/releases/download/v1.1.1/Star.Telescope-1.1.1.dmg)
   * [Windows v1.1.2](https://github.com/NatsuCamellia/Star/releases/download/v1.1.1/Star.Telescope-1.1.2.zip)
@@ -28,7 +28,7 @@
 ## 操作說明
 先選擇大學，再選擇科系，右方就會顯示該校系的歷年紀錄。
 
-![unknown](https://user-images.githubusercontent.com/66550218/162751482-28080937-9fff-488a-a3ef-99ef2a27a852.png)
+![unknown](https://user-images.githubusercontent.com/66550218/163816880-770d61a2-e83a-4e62-b57b-9e82197a728a.png)
 
 ## 已知問題
 * MacOS 版無法儲存最愛清單
