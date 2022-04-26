@@ -59,8 +59,6 @@ public class DepartmentOverviewController {
 
         readFavorite();
         favorListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorListViewSelected());
-        addFavorButton.setOnAction((arg0) -> addFavorite());
-        delFavorButton.setOnAction((arg0) -> deleteFavorite());
     }
 
     public void refreshDepartmentList() {
@@ -82,6 +80,7 @@ public class DepartmentOverviewController {
         reminder.setText(currentSchoolDepartment);
     }
 
+    @FXML
     private void addFavorite() {
         if (currentSchoolDepartment == null) return;
         if (favorListView.getItems().contains(currentSchoolDepartment)) return;
@@ -89,6 +88,7 @@ public class DepartmentOverviewController {
         writeFavorite();
     }
 
+    @FXML
     private void deleteFavorite() {
         if (currentSchoolDepartment == null) return;
         favorListView.getItems().remove(currentSchoolDepartment);
