@@ -1,36 +1,64 @@
 package Star.view;
 
+import Star.model.BriefDepartment;
 import Star.model.Department;
 import Star.util.DepartmentSearcher;
 import Star.util.ListViewUtil;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.layout.GridPane;
 
 import java.io.*;
 
 public class DepartmentOverviewController {
-    
+
+    // 總覽
     @FXML
     private ListView<String> schoolListView;
     @FXML
     private ListView<String> departmentListView;
-    @FXML
-    private Label rank_108, rank_109, rank_110, rank_111;
-    @FXML
-    private Label fil1_108, fil1_109, fil1_110, fil1_111;
-    @FXML
-    private Label fil2_108, fil2_109, fil2_110, fil2_111;
 
-    private Label[] rankLabels, fil1Labels, fil2Labels;
+    // 最愛清單
+    @FXML
+    private TableView<BriefDepartment> favorTableView;
+    private ObservableList<BriefDepartment> favorList = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<BriefDepartment, String> favorSchoolCell, favorDepartmentCell;
 
+    // 單一檢視
     @FXML
-    private ListView<String> favorListView;
+    private GridPane soloView;
     @FXML
-    private Button addFavorButton, delFavorButton;
+    private Label
+            rank_108, rank_109, rank_110,
+            rank_111, fil1_108, fil1_109, fil1_110, fil1_111,
+            fil2_108, fil2_109, fil2_110, fil2_111;
+    private Label[] rankLabels;
+    private Label[] fil1Labels;
+    private Label[] fil2Labels;
+
+
+    // 多重顯示
+    @FXML
+    private TableView<BriefDepartment> multiView;
+    @FXML
+    private TableColumn<BriefDepartment, String>
+            CNCell, ENCell, MACell, MBCell, SOCell, SCCell, ELCell,
+            rec108Cell, rec109Cell, rec110Cell, rec111Cell,
+            per108Cell, per109Cell, per110Cell, per111Cell;
+
+    // 導航列
     @FXML
     private Label reminder;
+    String currentSchoolDepartment;
+
+    // 單一顯示與多重顯示
+    private boolean isSoloView;
 
     String[] schoolList;
     String[] departmentList;
@@ -38,30 +66,50 @@ public class DepartmentOverviewController {
     String selectedSchoolCode;
     String selectedDepartment;
     String selectedDepartmentName;
-    String currentSchoolDepartment;
 
-    final int beginYear = 108;
-    final int endYear = 111;
+    final int BEGIN_YEAR = 108;
+    final int END_YEAR = 111;
     
     public void initialize() {
+
+        isSoloView = true;
+
         rankLabels = new Label[]{rank_108, rank_109, rank_110, rank_111};
         fil1Labels = new Label[]{fil1_108, fil1_109, fil1_110, fil1_111};
         fil2Labels = new Label[]{fil2_108, fil2_109, fil2_110, fil2_111};
 
         schoolList = ListViewUtil.getSchoolList();
         schoolListView.getItems().addAll(schoolList);
-        schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> {
-            setSchool(schoolListView.getSelectionModel().getSelectedItem());
-            refreshDepartmentList();
-        });
-        
+        schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> schoolListViewSelected());
+
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> departmentViewSelected());
 
         readFavorite();
-        favorListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorListViewSelected());
+        favorTableView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorTableViewSelected());
+        favorTableView.setItems(favorList);
+        favorSchoolCell.setCellValueFactory(b -> b.getValue().school);
+        favorDepartmentCell.setCellValueFactory(b -> b.getValue().department);
+
+        multiView.setItems(favorList);
+        CNCell.setCellValueFactory(b -> b.getValue().ranks[0]);
+        ENCell.setCellValueFactory(b -> b.getValue().ranks[1]);
+        MACell.setCellValueFactory(b -> b.getValue().ranks[2]);
+        MBCell.setCellValueFactory(b -> b.getValue().ranks[3]);
+        SOCell.setCellValueFactory(b -> b.getValue().ranks[4]);
+        SCCell.setCellValueFactory(b -> b.getValue().ranks[5]);
+        ELCell.setCellValueFactory(b -> b.getValue().ranks[6]);
+        per108Cell.setCellValueFactory(b -> b.getValue().percents[0]);
+        per109Cell.setCellValueFactory(b -> b.getValue().percents[1]);
+        per110Cell.setCellValueFactory(b -> b.getValue().percents[2]);
+        per111Cell.setCellValueFactory(b -> b.getValue().percents[3]);
+        rec108Cell.setCellValueFactory(b -> b.getValue().recruits[0]);
+        rec109Cell.setCellValueFactory(b -> b.getValue().recruits[1]);
+        rec110Cell.setCellValueFactory(b -> b.getValue().recruits[2]);
+        rec111Cell.setCellValueFactory(b -> b.getValue().recruits[3]);
     }
 
-    public void refreshDepartmentList() {
+    public void schoolListViewSelected() {
+        setSchool(schoolListView.getSelectionModel().getSelectedItem());
         departmentList = ListViewUtil.getDepartmentList(selectedSchoolCode);
         departmentListView.getItems().setAll(departmentList);
     }
@@ -69,8 +117,8 @@ public class DepartmentOverviewController {
     public void show() {
         DepartmentSearcher searcher = new DepartmentSearcher();
         Department department;
-        for (int i = 0; i <= endYear - beginYear; i++) {
-            department = searcher.search(String.valueOf(beginYear + i), selectedSchoolCode, selectedDepartmentName);
+        for (int i = 0; i <= END_YEAR - BEGIN_YEAR; i++) {
+            department = searcher.search(String.valueOf(BEGIN_YEAR + i), selectedSchoolCode, selectedDepartmentName);
             rankLabels[i].setText(department.getRank());
             fil1Labels[i].setText(department.getFil1());
             fil2Labels[i].setText(department.getFil2());
@@ -83,24 +131,33 @@ public class DepartmentOverviewController {
     @FXML
     private void addFavorite() {
         if (currentSchoolDepartment == null) return;
-        if (favorListView.getItems().contains(currentSchoolDepartment)) return;
-        favorListView.getItems().add(currentSchoolDepartment);
+        favorList.add(DepartmentSearcher.getBriefDepartment(currentSchoolDepartment));
         writeFavorite();
     }
 
     @FXML
     private void deleteFavorite() {
         if (currentSchoolDepartment == null) return;
-        favorListView.getItems().remove(currentSchoolDepartment);
+        favorList.remove(favorTableView.getSelectionModel().getSelectedItem());
         writeFavorite();
+    }
+
+    @FXML
+    private void toggleDisplay() {
+        soloView.setVisible(!isSoloView);
+        multiView.setVisible(isSoloView);
+
+        isSoloView = !isSoloView;
     }
 
     private void writeFavorite() {
         try {
-            String[] favorites = favorListView.getItems().toArray(new String[0]);
             FileOutputStream fileOut = new FileOutputStream("Favorite.dat");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(favorites);
+            StringBuilder sb = new StringBuilder();
+            favorList.forEach(b -> sb.append(b.schoolDepartment.getValue()).append(","));
+            String[] data = sb.toString().split(",");
+            out.writeObject(data);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -110,15 +167,21 @@ public class DepartmentOverviewController {
         try {
             FileInputStream fileIn = new FileInputStream("Favorite.dat");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            favorListView.getItems().addAll((String[])in.readObject());
+            String[] data = (String[])in.readObject();
+            favorList = FXCollections.observableArrayList();
+            for (String s : data) {
+                favorList.add(DepartmentSearcher.getBriefDepartment(s));
+            }
         } catch (Exception ignored) {
         }
     }
 
-    private void favorListViewSelected() {
-        if (favorListView.getSelectionModel().getSelectedItem() == null) return;
+    private void favorTableViewSelected() {
+        BriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
+        multiView.getSelectionModel().select(selectedItem);
+        if (selectedItem == null) return;
 
-        String[] selected = favorListView.getSelectionModel().getSelectedItem().split(" > ");
+        String[] selected = favorTableView.getSelectionModel().getSelectedItem().schoolDepartment.getValue().split(" > ");
         setSchool(selected[0]);
         setDepartment(selected[1]);
 
@@ -131,7 +194,7 @@ public class DepartmentOverviewController {
         setSchool(schoolListView.getSelectionModel().getSelectedItem());
         setDepartment(departmentListView.getSelectionModel().getSelectedItem());
 
-        favorListView.getSelectionModel().clearSelection();
+        favorTableView.getSelectionModel().clearSelection();
         show();
     }
 
