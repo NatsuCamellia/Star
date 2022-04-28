@@ -1,5 +1,6 @@
 package Star.util;
 
+import Star.model.BriefDepartment;
 import com.opencsv.CSVReader;
 
 import Star.model.Department;
@@ -26,7 +27,7 @@ public class DepartmentSearcher {
     }
 
     // 根據校系名稱取得校系資料
-    private String[] searchByDepartment(String department, CSVReader reader) {
+    private static String[] searchByDepartment(String department, CSVReader reader) {
         
         String[] data = null;
         try {
@@ -39,6 +40,33 @@ public class DepartmentSearcher {
             e.printStackTrace();
         }
         return data;
+    }
+
+    public static BriefDepartment getBriefDepartment(String schoolDepartment) {
+        String[] temp = schoolDepartment.split(" ");
+        String schoolCode = temp[0];
+        String departmentName = temp[4];
+
+        String[] recruits = new String[4];
+        String[] ranks = new String[7];
+        String[] percents = new String[4];
+
+        for (int i = 108; i <= 111; i++) {
+            CSVReader reader = CSVReaderUtil.getSchoolReader(String.valueOf(i), schoolCode);
+            String[] data = searchByDepartment(departmentName, reader);
+
+            if (i == 111) {
+                ranks = data[4].split("\n");
+            }
+
+            if (data != null) {
+                recruits[i - 108] = data[3];
+                percents[i - 108] = data[7].split("\n")[0];
+            }
+        }
+
+        return new BriefDepartment(schoolDepartment, recruits, ranks, percents);
+
     }
 
     private Department arrayToDepartment(String[] data, String year) {
