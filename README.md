@@ -9,13 +9,14 @@
 * 查詢四年內的繁星結果
 * 校系歷年各科門檻、比序結果
 * 最愛清單儲存科系，可供下次開啟使用
+* 多重檢視一次比較多個科系
 
 
 ## 版本與下載
-* 最新版本 [v1.1.2](https://github.com/NatsuCamellia/Star/releases/latest)
+* 最新版本 [v1.2.0](https://github.com/NatsuCamellia/Star/releases/latest)
 * 下載連結 
-  * [MacOS v1.1.2](https://github.com/NatsuCamellia/Star/releases/download/v1.1.2/Star.Telescope-1.1.2.dmg)
-  * [Windows v1.1.2](https://github.com/NatsuCamellia/Star/releases/download/v1.1.2/Star.Telescope-1.1.2.zip)
+  * [MacOS v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.dmg)
+  * [Windows v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.zip)
 
 
 ## 可查詢紀錄
@@ -28,7 +29,15 @@
 ## 操作說明
 先選擇大學，再選擇科系，右方就會顯示該校系的歷年紀錄。
 
-![unknown](https://user-images.githubusercontent.com/66550218/163816880-770d61a2-e83a-4e62-b57b-9e82197a728a.png)
+<img width="1312" alt="簡易說明" src="https://user-images.githubusercontent.com/66550218/165716056-38a4fa56-ee44-43cb-be3e-9b1706ea691b.png">
+
+
+點擊結果表格就能切換單一檢視與多重檢視
+
+提醒：切換到最愛清單才能看到校系
+
+<img width="1312" alt="多重檢視" src="https://user-images.githubusercontent.com/66550218/165716040-516aae13-759f-448e-b72f-90b217f27d3e.png">
+
 
 ## 已知問題
 * MacOS 版無法儲存最愛清單
