@@ -49,8 +49,8 @@ public class DepartmentOverviewController {
     @FXML
     private TableColumn<BriefDepartment, String>
             CNCell, ENCell, MACell, MBCell, SOCell, SCCell, ELCell,
-            rec108Cell, rec109Cell, rec110Cell, rec111Cell,
-            per108Cell, per109Cell, per110Cell, per111Cell;
+            rec105Cell, rec106Cell, rec107Cell, rec108Cell, rec109Cell, rec110Cell, rec111Cell,
+            per105Cell, per106Cell, per107Cell, per108Cell, per109Cell, per110Cell, per111Cell;
 
     // 導航列
     @FXML
@@ -98,14 +98,20 @@ public class DepartmentOverviewController {
         SOCell.setCellValueFactory(b -> b.getValue().ranks[4]);
         SCCell.setCellValueFactory(b -> b.getValue().ranks[5]);
         ELCell.setCellValueFactory(b -> b.getValue().ranks[6]);
-        per108Cell.setCellValueFactory(b -> b.getValue().percents[0]);
-        per109Cell.setCellValueFactory(b -> b.getValue().percents[1]);
-        per110Cell.setCellValueFactory(b -> b.getValue().percents[2]);
-        per111Cell.setCellValueFactory(b -> b.getValue().percents[3]);
-        rec108Cell.setCellValueFactory(b -> b.getValue().recruits[0]);
-        rec109Cell.setCellValueFactory(b -> b.getValue().recruits[1]);
-        rec110Cell.setCellValueFactory(b -> b.getValue().recruits[2]);
-        rec111Cell.setCellValueFactory(b -> b.getValue().recruits[3]);
+        per105Cell.setCellValueFactory(b -> b.getValue().percents[0]);
+        per106Cell.setCellValueFactory(b -> b.getValue().percents[1]);
+        per107Cell.setCellValueFactory(b -> b.getValue().percents[2]);
+        per108Cell.setCellValueFactory(b -> b.getValue().percents[3]);
+        per109Cell.setCellValueFactory(b -> b.getValue().percents[4]);
+        per110Cell.setCellValueFactory(b -> b.getValue().percents[5]);
+        per111Cell.setCellValueFactory(b -> b.getValue().percents[6]);
+        rec105Cell.setCellValueFactory(b -> b.getValue().recruits[0]);
+        rec106Cell.setCellValueFactory(b -> b.getValue().recruits[1]);
+        rec107Cell.setCellValueFactory(b -> b.getValue().recruits[2]);
+        rec108Cell.setCellValueFactory(b -> b.getValue().recruits[3]);
+        rec109Cell.setCellValueFactory(b -> b.getValue().recruits[4]);
+        rec110Cell.setCellValueFactory(b -> b.getValue().recruits[5]);
+        rec111Cell.setCellValueFactory(b -> b.getValue().recruits[6]);
     }
 
     public void schoolListViewSelected() {

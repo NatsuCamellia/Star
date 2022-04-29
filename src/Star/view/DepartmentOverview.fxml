@@ -216,7 +216,7 @@
                               <Insets />
                            </opaqueInsets>
                         </GridPane>
-                        <TableView fx:id="multiView" mouseTransparent="true" visible="false">
+                        <TableView fx:id="multiView" mouseTransparent="true">
                           <columns>
                               <TableColumn fx:id="CNCell" minWidth="-Infinity" prefWidth="60.0" text="國文" />
                               <TableColumn fx:id="ENCell" minWidth="-Infinity" prefWidth="60.0" text="英文" />
@@ -229,10 +229,16 @@
                               <TableColumn fx:id="per110Cell" minWidth="-Infinity" prefWidth="60.0" text="110%" />
                               <TableColumn fx:id="per109Cell" minWidth="-Infinity" prefWidth="60.0" text="109%" />
                               <TableColumn fx:id="per108Cell" minWidth="-Infinity" prefWidth="60.0" text="108%" />
-                            <TableColumn fx:id="rec111Cell" minWidth="-1.0" prefWidth="-1.0" text="111 招收" />
-                              <TableColumn fx:id="rec110Cell" minWidth="-1.0" prefWidth="-1.0" text="110 招收" />
-                              <TableColumn fx:id="rec109Cell" minWidth="-1.0" prefWidth="-1.0" text="109 招收" />
-                              <TableColumn fx:id="rec108Cell" minWidth="-1.0" prefWidth="-1.0" text="108 招收" />
+                              <TableColumn fx:id="per107Cell" minWidth="-Infinity" prefWidth="60.0" text="107%" />
+                              <TableColumn fx:id="per106Cell" minWidth="-Infinity" prefWidth="60.0" text="106%" />
+                              <TableColumn fx:id="per105Cell" minWidth="-Infinity" prefWidth="60.0" text="105%" />
+                            <TableColumn fx:id="rec111Cell" minWidth="-1.0" prefWidth="-1.0" text="111 招" />
+                              <TableColumn fx:id="rec110Cell" minWidth="-1.0" prefWidth="-1.0" text="110 招" />
+                              <TableColumn fx:id="rec109Cell" minWidth="-1.0" prefWidth="-1.0" text="109 招" />
+                              <TableColumn fx:id="rec108Cell" minWidth="-1.0" prefWidth="-1.0" text="108 招" />
+                              <TableColumn fx:id="rec107Cell" minWidth="-Infinity" prefWidth="60.0" text="107 招" />
+                              <TableColumn fx:id="rec106Cell" minWidth="-Infinity" prefWidth="60.0" text="106 招" />
+                              <TableColumn fx:id="rec105Cell" minWidth="-Infinity" prefWidth="60.0" text="105 招" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

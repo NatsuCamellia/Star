@@ -47,11 +47,11 @@ public class DepartmentSearcher {
         String schoolCode = temp[0];
         String departmentName = temp[4];
 
-        String[] recruits = new String[4];
+        String[] recruits = new String[7];
         String[] ranks = new String[7];
-        String[] percents = new String[4];
+        String[] percents = new String[7];
 
-        for (int i = 108; i <= 111; i++) {
+        for (int i = 105; i <= 111; i++) {
             CSVReader reader = CSVReaderUtil.getSchoolReader(String.valueOf(i), schoolCode);
             String[] data = searchByDepartment(departmentName, reader);
 
@@ -60,8 +60,8 @@ public class DepartmentSearcher {
             }
 
             if (data != null) {
-                recruits[i - 108] = data[3];
-                percents[i - 108] = data[7].split("\n")[0];
+                recruits[i - 105] = data[3];
+                percents[i - 105] = data[7].split("\n")[0];
             }
         }
 
