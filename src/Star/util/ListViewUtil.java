@@ -23,7 +23,7 @@ public class ListViewUtil {
         }
     }
 
-    public static String[] getDepartmentList(String schoolCode) {
+    public static String[] getDepartmentList(String schoolCode, boolean filterEnabled, int[] scores) {
         try {
             String str = "";
 
@@ -31,6 +31,10 @@ public class ListViewUtil {
 
             String[] data;
             while ((data = reader.readNext()) != null) {
+                if (filterEnabled) {
+                    String[] ranks = data[4].split("\n");
+                    if (!FilterUtil.filter(ranks, scores)) continue;
+                }
                 String code = data[0];
                 String name = data[1];
                 str += String.format("%s %s,", code, name);

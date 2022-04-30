@@ -7,10 +7,7 @@ import Star.util.ListViewUtil;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.*;
@@ -60,6 +57,14 @@ public class DepartmentOverviewController {
     // 單一顯示與多重顯示
     private boolean isSoloView;
 
+    // 五標篩選
+    @FXML
+    private ChoiceBox<String> CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox;
+    private ChoiceBox<String>[] scoreBoxes;
+
+    // 篩選勾取
+    @FXML
+    private CheckBox filterCheckBox;
     String[] schoolList;
     String[] departmentList;
     String selectedSchool;
@@ -67,12 +72,17 @@ public class DepartmentOverviewController {
     String selectedDepartment;
     String selectedDepartmentName;
 
+    int[] scores = new int[7];
+
+    boolean filterEnabled;
+
     final int BEGIN_YEAR = 108;
     final int END_YEAR = 111;
     
     public void initialize() {
 
         isSoloView = true;
+        filterEnabled = filterCheckBox.isSelected();
 
         rankLabels = new Label[]{rank_108, rank_109, rank_110, rank_111};
         fil1Labels = new Label[]{fil1_108, fil1_109, fil1_110, fil1_111};
@@ -81,8 +91,10 @@ public class DepartmentOverviewController {
         schoolList = ListViewUtil.getSchoolList();
         schoolListView.getItems().addAll(schoolList);
         schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> schoolListViewSelected());
+        schoolListView.getSelectionModel().select(0);
 
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> departmentViewSelected());
+        departmentListView.getSelectionModel().select(0);
 
         readFavorite();
         favorTableView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorTableViewSelected());
@@ -112,11 +124,26 @@ public class DepartmentOverviewController {
         rec109Cell.setCellValueFactory(b -> b.getValue().recruits[4]);
         rec110Cell.setCellValueFactory(b -> b.getValue().recruits[5]);
         rec111Cell.setCellValueFactory(b -> b.getValue().recruits[6]);
+
+        scoreBoxes = new ChoiceBox[]{CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox};
+        for (int i = 0; i < scores.length - 1; i++) {
+            scoreBoxes[i].getItems().setAll("無標", "底標", "後標", "均標", "前標", "頂標");
+            scoreBoxes[i].getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> setScores());
+            scoreBoxes[i].getSelectionModel().select(5);
+        }
+        ELBox.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> setScores());
+        ELBox.getItems().setAll("無成績", "F", "C", "B", "A");
+        ELBox.getSelectionModel().select(4);
+
     }
 
     public void schoolListViewSelected() {
         setSchool(schoolListView.getSelectionModel().getSelectedItem());
-        departmentList = ListViewUtil.getDepartmentList(selectedSchoolCode);
+        updateDepartmentList();
+    }
+
+    private void updateDepartmentList() {
+        departmentList = ListViewUtil.getDepartmentList(selectedSchoolCode, filterEnabled, scores);
         departmentListView.getItems().setAll(departmentList);
     }
 
@@ -154,6 +181,20 @@ public class DepartmentOverviewController {
         multiView.setVisible(isSoloView);
 
         isSoloView = !isSoloView;
+    }
+
+    @FXML
+    private void setScores() {
+        for (int i = 0; i < scores.length; i++) {
+            scores[i] = scoreBoxes[i].getSelectionModel().getSelectedIndex();
+        }
+        updateDepartmentList();
+    }
+
+    @FXML
+    private void updateFilter() {
+        filterEnabled = filterCheckBox.isSelected();
+        updateDepartmentList();
     }
 
     private void writeFavorite() {
