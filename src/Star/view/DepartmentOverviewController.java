@@ -4,6 +4,7 @@ import Star.model.BriefDepartment;
 import Star.model.Department;
 import Star.util.DepartmentSearcher;
 import Star.util.ListViewUtil;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,6 +46,7 @@ public class DepartmentOverviewController {
     private TableView<BriefDepartment> multiView;
     @FXML
     private TableColumn<BriefDepartment, String>
+            validCell,
             CNCell, ENCell, MACell, MBCell, SOCell, SCCell, ELCell,
             rec105Cell, rec106Cell, rec107Cell, rec108Cell, rec109Cell, rec110Cell, rec111Cell,
             per105Cell, per106Cell, per107Cell, per108Cell, per109Cell, per110Cell, per111Cell;
@@ -103,6 +105,7 @@ public class DepartmentOverviewController {
         favorDepartmentCell.setCellValueFactory(b -> b.getValue().department);
 
         multiView.setItems(favorList);
+        validCell.setCellValueFactory(b -> b.getValue().valid);
         CNCell.setCellValueFactory(b -> b.getValue().ranks[0]);
         ENCell.setCellValueFactory(b -> b.getValue().ranks[1]);
         MACell.setCellValueFactory(b -> b.getValue().ranks[2]);
@@ -147,6 +150,11 @@ public class DepartmentOverviewController {
         departmentListView.getItems().setAll(departmentList);
     }
 
+    private void updateFavoritesList() {
+        favorList.forEach(b -> b.validate(scores));
+        multiView.refresh();
+    }
+
     public void show() {
         DepartmentSearcher searcher = new DepartmentSearcher();
         Department department;
@@ -189,12 +197,14 @@ public class DepartmentOverviewController {
             scores[i] = scoreBoxes[i].getSelectionModel().getSelectedIndex();
         }
         updateDepartmentList();
+        updateFavoritesList();
     }
 
     @FXML
     private void updateFilter() {
         filterEnabled = filterCheckBox.isSelected();
         updateDepartmentList();
+        updateFavoritesList();
     }
 
     private void writeFavorite() {

@@ -20,7 +20,6 @@ public class FilterUtil {
     public static boolean filter (String[] ranks, int[] scores) {
         boolean valid = true;
         for (int i = 0; i < ranks.length; i++) {
-            for (int score : scores) System.out.println(score);
             if (scoreMap.get(ranks[i]) > scores[i]) {
                 valid = false;
                 break;
