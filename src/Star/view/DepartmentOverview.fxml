@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Star.view.DepartmentOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Star.view.DepartmentOverviewController">
    <children>
       <HBox prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -295,7 +295,7 @@
                               <Insets />
                            </opaqueInsets>
                         </GridPane>
-                        <TableView fx:id="multiView" editable="true" mouseTransparent="true" onSort="#updateFilter">
+                        <TableView fx:id="multiView" editable="true" mouseTransparent="true" onSort="#updateFilter" visible="false">
                           <columns>
                               <TableColumn fx:id="validCell" minWidth="-1.0" prefWidth="60.0" text="符合" />
                               <TableColumn fx:id="CNCell" minWidth="-Infinity" prefWidth="60.0" text="國文" />

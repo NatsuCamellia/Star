@@ -3,23 +3,19 @@ package Star.view;
 import Star.model.BriefDepartment;
 import Star.model.Department;
 import Star.util.DepartmentSearcher;
+import Star.util.IOUtil;
 import Star.util.ListViewUtil;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
-import java.io.*;
-
 public class DepartmentOverviewController {
 
     // 總覽
     @FXML
-    private ListView<String> schoolListView;
-    @FXML
-    private ListView<String> departmentListView;
+    private ListView<String> schoolListView, departmentListView;
 
     // 最愛清單
     @FXML
@@ -57,34 +53,24 @@ public class DepartmentOverviewController {
     String currentSchoolDepartment;
 
     // 單一顯示與多重顯示
-    private boolean isSoloView;
+    private boolean isSoloView = true;
 
     // 五標篩選
     @FXML
     private ChoiceBox<String> CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox;
     private ChoiceBox<String>[] scoreBoxes;
-
-    // 篩選勾取
+    int[] scores = new int[7];
     @FXML
     private CheckBox filterCheckBox;
+    boolean filterEnabled = false;
+
     String[] schoolList;
     String[] departmentList;
-    String selectedSchool;
-    String selectedSchoolCode;
-    String selectedDepartment;
-    String selectedDepartmentName;
-
-    int[] scores = new int[7];
-
-    boolean filterEnabled;
 
     final int BEGIN_YEAR = 108;
     final int END_YEAR = 111;
     
     public void initialize() {
-
-        isSoloView = true;
-        filterEnabled = filterCheckBox.isSelected();
 
         rankLabels = new Label[]{rank_108, rank_109, rank_110, rank_111};
         fil1Labels = new Label[]{fil1_108, fil1_109, fil1_110, fil1_111};
@@ -98,7 +84,7 @@ public class DepartmentOverviewController {
         departmentListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> departmentViewSelected());
         departmentListView.getSelectionModel().select(0);
 
-        readFavorite();
+        favorList = IOUtil.readFavorite();
         favorTableView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorTableViewSelected());
         favorTableView.setItems(favorList);
         favorSchoolCell.setCellValueFactory(b -> b.getValue().school);
@@ -131,22 +117,40 @@ public class DepartmentOverviewController {
         scoreBoxes = new ChoiceBox[]{CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox};
         for (int i = 0; i < scores.length - 1; i++) {
             scoreBoxes[i].getItems().setAll("無標", "底標", "後標", "均標", "前標", "頂標");
-            scoreBoxes[i].getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> setScores());
+            scoreBoxes[i].getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
             scoreBoxes[i].getSelectionModel().select(5);
         }
-        ELBox.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> setScores());
         ELBox.getItems().setAll("無成績", "F", "C", "B", "A");
+        ELBox.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
         ELBox.getSelectionModel().select(4);
-
     }
 
-    public void schoolListViewSelected() {
-        setSchool(schoolListView.getSelectionModel().getSelectedItem());
-        updateDepartmentList();
+    private void schoolListViewSelected() {
+        String school = schoolListView.getSelectionModel().getSelectedItem();
+        updateDepartmentList(school);
     }
 
-    private void updateDepartmentList() {
-        departmentList = ListViewUtil.getDepartmentList(selectedSchoolCode, filterEnabled, scores);
+    private void departmentViewSelected() {
+        if (departmentListView.getSelectionModel().getSelectedItem() == null) return;
+
+        String selectedSchool = schoolListView.getSelectionModel().getSelectedItem();
+        String selectedDepartment = departmentListView.getSelectionModel().getSelectedItem();
+        currentSchoolDepartment = String.format("%s > %s", selectedSchool, selectedDepartment);
+        favorTableView.getSelectionModel().clearSelection();
+        show();
+    }
+
+    private void favorTableViewSelected() {
+        BriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
+        multiView.getSelectionModel().select(selectedItem);
+        if (selectedItem == null) return;
+        currentSchoolDepartment = selectedItem.schoolDepartment.getValue();
+        departmentListView.getSelectionModel().clearSelection();
+        show();
+    }
+
+    private void updateDepartmentList(String school) {
+        departmentList = ListViewUtil.getDepartmentList(school, filterEnabled, scores);
         departmentListView.getItems().setAll(departmentList);
     }
 
@@ -155,17 +159,27 @@ public class DepartmentOverviewController {
         multiView.refresh();
     }
 
-    public void show() {
+    @FXML
+    private void updateFilter() {
+        for (int i = 0; i < scores.length; i++) {
+            scores[i] = scoreBoxes[i].getSelectionModel().getSelectedIndex();
+        }
+        filterEnabled = filterCheckBox.isSelected();
+        String school = schoolListView.getSelectionModel().getSelectedItem();
+        updateDepartmentList(school);
+        updateFavoritesList();
+    }
+
+    private void show() {
         DepartmentSearcher searcher = new DepartmentSearcher();
         Department department;
         for (int i = 0; i <= END_YEAR - BEGIN_YEAR; i++) {
-            department = searcher.search(String.valueOf(BEGIN_YEAR + i), selectedSchoolCode, selectedDepartmentName);
+            department = searcher.search(String.valueOf(BEGIN_YEAR + i), currentSchoolDepartment);
             rankLabels[i].setText(department.getRank());
             fil1Labels[i].setText(department.getFil1());
             fil2Labels[i].setText(department.getFil2());
         }
 
-        currentSchoolDepartment = String.format("%s > %s", selectedSchool, selectedDepartment);
         reminder.setText(currentSchoolDepartment);
     }
 
@@ -173,14 +187,14 @@ public class DepartmentOverviewController {
     private void addFavorite() {
         if (currentSchoolDepartment == null) return;
         favorList.add(DepartmentSearcher.getBriefDepartment(currentSchoolDepartment));
-        writeFavorite();
+        IOUtil.writeFavorite(favorList);
     }
 
     @FXML
     private void deleteFavorite() {
         if (currentSchoolDepartment == null) return;
         favorList.remove(favorTableView.getSelectionModel().getSelectedItem());
-        writeFavorite();
+        IOUtil.writeFavorite(favorList);
     }
 
     @FXML
@@ -189,79 +203,5 @@ public class DepartmentOverviewController {
         multiView.setVisible(isSoloView);
 
         isSoloView = !isSoloView;
-    }
-
-    @FXML
-    private void setScores() {
-        for (int i = 0; i < scores.length; i++) {
-            scores[i] = scoreBoxes[i].getSelectionModel().getSelectedIndex();
-        }
-        updateDepartmentList();
-        updateFavoritesList();
-    }
-
-    @FXML
-    private void updateFilter() {
-        filterEnabled = filterCheckBox.isSelected();
-        updateDepartmentList();
-        updateFavoritesList();
-    }
-
-    private void writeFavorite() {
-        try {
-            FileOutputStream fileOut = new FileOutputStream("Favorite.dat");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            StringBuilder sb = new StringBuilder();
-            favorList.forEach(b -> sb.append(b.schoolDepartment.getValue()).append(","));
-            String[] data = sb.toString().split(",");
-            out.writeObject(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void readFavorite() {
-        try {
-            FileInputStream fileIn = new FileInputStream("Favorite.dat");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            String[] data = (String[])in.readObject();
-            favorList = FXCollections.observableArrayList();
-            for (String s : data) {
-                favorList.add(DepartmentSearcher.getBriefDepartment(s));
-            }
-        } catch (Exception ignored) {
-        }
-    }
-
-    private void favorTableViewSelected() {
-        BriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
-        multiView.getSelectionModel().select(selectedItem);
-        if (selectedItem == null) return;
-
-        String[] selected = favorTableView.getSelectionModel().getSelectedItem().schoolDepartment.getValue().split(" > ");
-        setSchool(selected[0]);
-        setDepartment(selected[1]);
-
-        departmentListView.getSelectionModel().clearSelection();
-        show();
-    }
-
-    private void departmentViewSelected() {
-        if (departmentListView.getSelectionModel().getSelectedItem() == null) return;
-        setSchool(schoolListView.getSelectionModel().getSelectedItem());
-        setDepartment(departmentListView.getSelectionModel().getSelectedItem());
-
-        favorTableView.getSelectionModel().clearSelection();
-        show();
-    }
-
-    private void setSchool(String school) {
-        selectedSchool = school;
-        selectedSchoolCode = selectedSchool.substring(0, 3);
-    }
-
-    private void setDepartment(String department) {
-        selectedDepartment = department;
-        selectedDepartmentName = selectedDepartment.substring(6);
     }
 }

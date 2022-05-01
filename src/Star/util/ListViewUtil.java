@@ -23,7 +23,8 @@ public class ListViewUtil {
         }
     }
 
-    public static String[] getDepartmentList(String schoolCode, boolean filterEnabled, int[] scores) {
+    public static String[] getDepartmentList(String school, boolean filterEnabled, int[] scores) {
+        String schoolCode = school.split(" ")[0];
         try {
             String str = "";
 

@@ -7,8 +7,11 @@ import Star.model.Department;
 
 public class DepartmentSearcher {
 
-    public Department search(String year, String schoolCode, String department) {
+    public Department search(String year, String schoolDepartment) {
 
+        String[] temp = schoolDepartment.split(" ");
+        String schoolCode = temp[0];
+        String department = temp[4];
         CSVReader reader = CSVReaderUtil.getSchoolReader(year, schoolCode);
 
         // 取得校系資料
