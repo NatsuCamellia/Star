@@ -187,6 +187,7 @@ public class DepartmentOverviewController {
     private void addFavorite() {
         if (currentSchoolDepartment == null) return;
         favorList.add(DepartmentSearcher.getBriefDepartment(currentSchoolDepartment));
+        updateFavoritesList();
         IOUtil.writeFavorite(favorList);
     }
 
