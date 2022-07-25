@@ -1,5 +1,6 @@
 package Star;
 
+import Star.util.IOUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class MainApp extends Application {
         this.primaryStage.setResizable(true);
         this.primaryStage.getIcons().add(new Image(MainApp.class.getResourceAsStream("images/icon.png")));
 
+        IOUtil.initialize();
         initRootLayout();
     }
 

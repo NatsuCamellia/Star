@@ -11,9 +11,19 @@ import java.io.ObjectOutputStream;
 
 public class IOUtil {
 
+    final static String PATH_WIN = "Favorite.dat";
+    final static String PATH_MAC = "/Applications/繁星望遠鏡.app/Contents/app/Favorite.dat";
+    static String path;
+
+    public static void initialize() {
+        String os = System.getProperty("os.name");
+        path = os.toLowerCase().startsWith("win") ? PATH_WIN : PATH_MAC;
+        System.out.println(path);
+    }
+
     public static void writeFavorite(ObservableList<BriefDepartment> favorList) {
         try {
-            FileOutputStream fileOut = new FileOutputStream("Favorite.dat");
+            FileOutputStream fileOut = new FileOutputStream(path);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             StringBuilder sb = new StringBuilder();
             favorList.forEach(b -> sb.append(b.schoolDepartment.getValue()).append(","));
@@ -27,7 +37,7 @@ public class IOUtil {
     public static ObservableList<BriefDepartment> readFavorite() {
         ObservableList<BriefDepartment> favorList = FXCollections.observableArrayList();
         try {
-            FileInputStream fileIn = new FileInputStream("Favorite.dat");
+            FileInputStream fileIn = new FileInputStream(path);
             ObjectInputStream in = new ObjectInputStream(fileIn);
             String[] data = (String[])in.readObject();
             for (String s : data) {
