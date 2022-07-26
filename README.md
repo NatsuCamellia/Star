@@ -10,13 +10,15 @@
 * 校系歷年各科門檻、比序結果
 * 最愛清單儲存科系，可供下次開啟使用
 * 多重檢視一次比較多個科系
+* 五標篩選
+* 自動比對是否符合標準
 
 
 ## 版本與下載
-* 最新版本 [v1.2.0](https://github.com/NatsuCamellia/Star/releases/latest)
+* 最新版本 [v1.2.1](https://github.com/NatsuCamellia/Star/releases/latest)
 * 下載連結 
-  * [MacOS v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.dmg)
-  * [Windows v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.zip)
+  * [MacOS v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.dmg)
+  * [Windows v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.zip)
 
 
 ## 可查詢紀錄
