@@ -40,10 +40,6 @@
 
 <img width="1312" alt="多重檢視" src="https://user-images.githubusercontent.com/66550218/165716040-516aae13-759f-448e-b72f-90b217f27d3e.png">
 
-
-## 已知問題
-* MacOS 版無法儲存最愛清單
-
 ## 註記
 * 大學名稱、校系名稱與代碼，皆以111年為準。
 * 新出現或是更名的校系，將無法查詢。
