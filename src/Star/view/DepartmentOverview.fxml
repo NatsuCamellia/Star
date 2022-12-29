@@ -187,17 +187,17 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="110" wrapText="true" GridPane.columnIndex="2">
+                              <Label text="111" wrapText="true" GridPane.columnIndex="2">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label text="109" wrapText="true" GridPane.columnIndex="3">
+                              <Label text="110" wrapText="true" GridPane.columnIndex="3">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label text="108" wrapText="true" GridPane.columnIndex="4">
+                              <Label text="109" wrapText="true" GridPane.columnIndex="4">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
@@ -217,67 +217,67 @@
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label text="111" wrapText="true" GridPane.columnIndex="1">
+                              <Label text="112" wrapText="true" GridPane.columnIndex="1">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="rank_108" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                              <Label fx:id="rank_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="rank_109" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              <Label fx:id="rank_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="rank_110" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                              <Label fx:id="rank_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="rank_111" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="rank_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil1_111" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="fil1_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil1_110" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                              <Label fx:id="fil1_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil2_111" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Label fx:id="fil2_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil2_110" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                              <Label fx:id="fil2_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil2_109" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                              <Label fx:id="fil2_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil1_109" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                              <Label fx:id="fil1_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil1_108" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                              <Label fx:id="fil1_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="fil2_108" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                              <Label fx:id="fil2_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Microsoft JhengHei" size="17.0" />
                                  </font>
