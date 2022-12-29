@@ -8,7 +8,7 @@ public class ListViewUtil {
         try {
             String str = "";
 
-            CSVReader reader = CSVReaderUtil.getIdReader("111");
+            CSVReader reader = CSVReaderUtil.getIdReader("112");
 
             String[] data;
             while ((data = reader.readNext()) != null) {
@@ -28,7 +28,7 @@ public class ListViewUtil {
         try {
             String str = "";
 
-            CSVReader reader = CSVReaderUtil.getSchoolReader("111", schoolCode);
+            CSVReader reader = CSVReaderUtil.getSchoolReader("112", schoolCode);
 
             String[] data;
             while ((data = reader.readNext()) != null) {

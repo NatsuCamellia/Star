@@ -54,15 +54,13 @@ public class DepartmentSearcher {
         String[] ranks = new String[7];
         String[] percents = new String[7];
 
-        for (int i = 105; i <= 111; i++) {
+        for (int i = 105; i <= 112; i++) {
             CSVReader reader = CSVReaderUtil.getSchoolReader(String.valueOf(i), schoolCode);
             String[] data = searchByDepartment(departmentName, reader);
 
-            if (i == 111) {
+            if (i == 112) {
                 ranks = data[4].split("\n");
-            }
-
-            if (data != null) {
+            } else if (data != null) {
                 recruits[i - 105] = data[3];
                 percents[i - 105] = data[7].split("\n")[0];
             }
@@ -80,7 +78,7 @@ public class DepartmentSearcher {
         String[] subjects;
         String[] ranks = data[4].split("\n");
 
-        if (year.equals("111")) subjects = new String[] {"國文", "英文", "數學A", "數學B", "社會", "自然", "英聽"};
+        if (Integer.parseInt(year) >= 111) subjects = new String[] {"國文", "英文", "數學A", "數學B", "社會", "自然", "英聽"};
         else subjects = new String[] {"國文", "英文", "數學", "社會", "自然", "英聽"};
 
         for (int i = 0; i < subjects.length; i++) {
@@ -96,7 +94,9 @@ public class DepartmentSearcher {
         fil1 = fil1.replace("學測數A", "學測數Ａ").replace("學測數B", "學測數Ｂ");
         
         // 有第二輪篩選
-        if (!data[8].equals("--")) {
+        if (year.equals("112")) {
+            fil2 = fil1;
+        } else if (!data[8].equals("--")) {
             fil2 = data[8] + " / " + data[2];
             String[] fil_2 = data[9].split("\n");
             for (int i = 0; i < filters.length; i++) {
