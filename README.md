@@ -10,13 +10,15 @@
 * 校系歷年各科門檻、比序結果
 * 最愛清單儲存科系，可供下次開啟使用
 * 多重檢視一次比較多個科系
+* 五標篩選
+* 自動比對是否符合標準
 
 
 ## 版本與下載
-* 最新版本 [v1.2.0](https://github.com/NatsuCamellia/Star/releases/latest)
+* 最新版本 [v1.2.1](https://github.com/NatsuCamellia/Star/releases/latest)
 * 下載連結 
-  * [MacOS v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.dmg)
-  * [Windows v1.2.0](https://github.com/NatsuCamellia/Star/releases/download/v1.2.0/Star.Telescope-1.2.0.zip)
+  * [MacOS v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.dmg)
+  * [Windows v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.zip)
 
 
 ## 可查詢紀錄
@@ -37,10 +39,6 @@
 提醒：切換到最愛清單才能看到校系
 
 <img width="1312" alt="多重檢視" src="https://user-images.githubusercontent.com/66550218/165716040-516aae13-759f-448e-b72f-90b217f27d3e.png">
-
-
-## 已知問題
-* MacOS 版無法儲存最愛清單
 
 ## 註記
 * 大學名稱、校系名稱與代碼，皆以111年為準。
