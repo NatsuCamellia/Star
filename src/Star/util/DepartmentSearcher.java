@@ -78,20 +78,22 @@ public class DepartmentSearcher {
         String[] subjects;
         String[] ranks = data[4].split("\n");
 
-        if (Integer.parseInt(year) >= 111) subjects = new String[] {"國文", "英文", "數學A", "數學B", "社會", "自然", "英聽"};
+        if (Integer.parseInt(year) >= 111) subjects = new String[] {"國文", "英文", "數學Ａ", "數學Ｂ", "社會", "自然", "英聽"};
         else subjects = new String[] {"國文", "英文", "數學", "社會", "自然", "英聽"};
 
         for (int i = 0; i < subjects.length; i++) {
-            rank += String.format("\n%s\t%s", subjects[i], ranks[i]);
+            rank += String.format("\n%-4s%s", subjects[i], ranks[i]);
         }
+
+        rank = rank.replace(' ', '　');
 
         String[] filters = data[5].split("\n");
         String[] fil_1 = data[7].split("\n");
         fil1 = data[6] + " / " + data[2];
         for (int i = 0; i < filters.length; i++) {
-            fil1 += "\n" + filters[i] + "\t" + fil_1[i];
+            fil1 += String.format("\n%-7s%s", filters[i], fil_1[i]);
         }
-        fil1 = fil1.replace("學測數A", "學測數Ａ").replace("學測數B", "學測數Ｂ");
+        fil1 = fil1.replace("A", "Ａ").replace("B", "Ｂ").replace(' ', '　');
         
         // 有第二輪篩選
         if (year.equals("112")) {
@@ -100,9 +102,9 @@ public class DepartmentSearcher {
             fil2 = data[8] + " / " + data[2];
             String[] fil_2 = data[9].split("\n");
             for (int i = 0; i < filters.length; i++) {
-                fil2 += "\n" + filters[i] + "\t" + fil_2[i];
+                fil2 += String.format("\n%-7s%s", filters[i], fil_2[i]);
             }
-            fil2 = fil2.replace("學測數A", "學測數Ａ").replace("學測數B", "學測數Ｂ");
+            fil2 = fil2.replace("A", "Ａ").replace("B", "Ｂ").replace(' ', '　');
         // 無第二輪篩選
         } else {
             fil2 = "無第二輪";
