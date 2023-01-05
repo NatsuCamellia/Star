@@ -15,10 +15,10 @@
 
 
 ## 版本與下載
-* 最新版本 [v1.2.1](https://github.com/NatsuCamellia/Star/releases/latest)
+* 最新版本 [v1.2.2](https://github.com/NatsuCamellia/Star/releases/latest)
 * 下載連結 
-  * [MacOS v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.dmg)
-  * [Windows v1.2.1](https://github.com/NatsuCamellia/Star/releases/download/v1.2.1/Star.Telescope-1.2.1.zip)
+  * [MacOS v1.2.2](https://github.com/NatsuCamellia/Star/releases/download/v1.2.2/Star.Telescope-1.2.2.dmg)
+  * [Windows v1.2.2](https://github.com/NatsuCamellia/Star/releases/download/v1.2.2/Star.Telescope-1.2.2.zip)
 
 
 ## 可查詢紀錄
@@ -41,6 +41,6 @@
 <img width="1312" alt="多重檢視" src="https://user-images.githubusercontent.com/66550218/165716040-516aae13-759f-448e-b72f-90b217f27d3e.png">
 
 ## 註記
-* 大學名稱、校系名稱與代碼，皆以111年為準。
+* 大學名稱、校系名稱與代碼，皆以112年為準。
 * 新出現或是更名的校系，將無法查詢。
 * 內容僅供參考，實際數據請以大學甄選入學委員會公告為準。
