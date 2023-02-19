@@ -1,6 +1,7 @@
 package Star.util;
 
 import Star.model.BriefDepartment;
+import Star.model.SchoolDepartment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -8,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IOUtil {
 
@@ -24,24 +27,23 @@ public class IOUtil {
         try {
             FileOutputStream fileOut = new FileOutputStream(path);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            StringBuilder sb = new StringBuilder();
-            favorList.forEach(b -> sb.append(b.schoolDepartment.getValue()).append(","));
-            String[] data = sb.toString().split(",");
-            out.writeObject(data);
+            List<SchoolDepartment> list = new ArrayList<>();
+            favorList.forEach(x -> list.add(x.getSchoolDepartment()));
+            out.writeObject(list);
         } catch (Exception e) {
+            System.out.println("Error occurs when writing favorite!");
             e.printStackTrace();
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static ObservableList<BriefDepartment> readFavorite() {
         ObservableList<BriefDepartment> favorList = FXCollections.observableArrayList();
         try {
             FileInputStream fileIn = new FileInputStream(path);
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            String[] data = (String[])in.readObject();
-            for (String s : data) {
-                favorList.add(DepartmentSearcher.getBriefDepartment(s));
-            }
+            List<SchoolDepartment> list = (List<SchoolDepartment>)in.readObject();
+            list.forEach(x -> favorList.add(DepartmentSearcher.getBriefDepartment(x)));
             return favorList;
         } catch (Exception ignored) {
             return favorList;

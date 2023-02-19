@@ -1,34 +1,38 @@
 package Star.util;
 
+import Star.model.SchoolDepartment;
 import com.opencsv.CSVReader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewUtil {
     
-    public static String[] getSchoolList() {
+    public static List<String> getSchoolList() {
         try {
-            String str = "";
+            List<String> list = new ArrayList<>();
 
             CSVReader reader = CSVReaderUtil.getIdReader("112");
 
             String[] data;
             while ((data = reader.readNext()) != null) {
-                str += String.format("%s %s,", data[0], data[1]);
+                list.add(String.format("%s %s", data[0], data[1]));
             }
             reader.close();
 
-            return str.split(",");
+            return list;
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public static String[] getDepartmentList(String school, boolean filterEnabled, int[] scores) {
-        String schoolCode = school.split(" ")[0];
+    public static List<String> getDepartmentList(SchoolDepartment schoolDepartment, boolean filterEnabled, int[] scores) {
         try {
-            String str = "";
+            List<String> list = new ArrayList<>();
 
-            CSVReader reader = CSVReaderUtil.getSchoolReader("112", schoolCode);
+            CSVReader reader = CSVReaderUtil.getSchoolReader("112", schoolDepartment.getSchoolCode());
+            assert reader != null;
 
             String[] data;
             while ((data = reader.readNext()) != null) {
@@ -38,11 +42,11 @@ public class ListViewUtil {
                 }
                 String code = data[0];
                 String name = data[1];
-                str += String.format("%s %s,", code, name);
+                list.add(String.format("%s %s", code, name));
             }
             reader.close();
 
-            return str.split(",");
+            return list;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

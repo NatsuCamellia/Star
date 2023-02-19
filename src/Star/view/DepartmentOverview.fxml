@@ -160,7 +160,7 @@
                               <Insets right="10.0" />
                            </padding>
                         </ButtonBar>
-                        <Label fx:id="reminder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                        <Label fx:id="navigationLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                            <padding>
                               <Insets left="10.0" />
                            </padding>
