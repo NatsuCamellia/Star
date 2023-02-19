@@ -1,7 +1,11 @@
+@font-face {
+    src: url("font/LXGWWenKai-Regular.ttf");
+}
+
 .root {
-    -fx-font-family: "BiauKai";
+    -fx-font-family: "LXGW WenKai";
 }
 
 .label {
-    -fx-font-family: "BiauKai";
+    -fx-font-family: "LXGW WenKai";
 }
