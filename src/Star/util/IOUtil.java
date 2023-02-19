@@ -18,7 +18,6 @@ public class IOUtil {
     public static void initialize() {
         String os = System.getProperty("os.name");
         path = os.toLowerCase().startsWith("win") ? PATH_WIN : PATH_MAC;
-        System.out.println(path);
     }
 
     public static void writeFavorite(ObservableList<BriefDepartment> favorList) {
