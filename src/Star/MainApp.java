@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class MainApp extends Application {
     
     private Stage primaryStage;
@@ -17,7 +19,8 @@ public class MainApp extends Application {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("繁星望遠鏡 v1.2.2");
         this.primaryStage.setResizable(true);
-        this.primaryStage.getIcons().add(new Image(MainApp.class.getResourceAsStream("images/icon.png")));
+        Image icon = new Image(Objects.requireNonNull(MainApp.class.getResourceAsStream("images/icon.png")));
+        this.primaryStage.getIcons().add(icon);
 
         IOUtil.initialize();
         initRootLayout();
