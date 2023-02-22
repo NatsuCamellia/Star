@@ -11,6 +11,13 @@ import javafx.stage.Stage;
 import java.util.Objects;
 
 public class MainApp extends Application {
+
+    // Global settings
+    public static final int SCALE_YEAR = 112;
+    public static final int MULTI_START_YEAR = 105;
+    public static final int MULTI_END_YEAR = 111;
+    public static final int SOLO_START_YEAR = 108;
+    public static final int SOLO_END_YEAR = 111;
     
     private Stage primaryStage;
 

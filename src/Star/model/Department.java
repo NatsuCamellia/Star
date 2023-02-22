@@ -2,32 +2,32 @@ package Star.model;
 
 public class Department {
 
-    private final String rank;
-    private final String fil1;
-    private final String fil2;
+    private final String scale;
+    private final String stage1;
+    private final String stage2;
 
-    public Department(String rank, String fil1, String fil2) {
-        this.rank = rank;
-        this.fil1 = fil1;
-        this.fil2 = fil2;
+    public Department(String scale, String stage1, String stage2) {
+        this.scale = scale;
+        this.stage1 = stage1;
+        this.stage2 = stage2;
     }
 
     public Department() {
-        this.rank = "無資料";
-        this.fil1 = "無資料";
-        this.fil2 = "無資料";
+        this.scale = "無資料";
+        this.stage1 = "無資料";
+        this.stage2 = "無資料";
     }
 
-    public String getRank() {
-        return rank;
+    public String getScale() {
+        return scale;
     }
 
-    public String getFil1() {
-        return fil1;
+    public String getStage1() {
+        return stage1;
     }
 
-    public String getFil2() {
-        return fil2;
+    public String getStage2() {
+        return stage2;
     }
 
 

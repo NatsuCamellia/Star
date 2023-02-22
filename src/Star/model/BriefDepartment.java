@@ -1,6 +1,6 @@
 package Star.model;
 
-import Star.util.FilterUtil;
+import Star.filter.Filter;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -35,7 +35,7 @@ public class BriefDepartment {
     }
 
     public void validate (int[] scores) {
-        String s = FilterUtil.filter(ranksRaw, scores) ? "O" : "X";
+        String s = Filter.filter(ranksRaw, scores) ? "O" : "X";
         valid = new SimpleStringProperty(s);
     }
 }

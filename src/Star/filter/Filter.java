@@ -1,8 +1,8 @@
-package Star.util;
+package Star.filter;
 
 import java.util.HashMap;
 
-public class FilterUtil {
+public class Filter {
     static HashMap<String, Integer> scoreMap = new HashMap<>();
     static {
         scoreMap.put("--", 0);
@@ -18,13 +18,11 @@ public class FilterUtil {
     }
 
     public static boolean filter (String[] ranks, int[] scores) {
-        boolean valid = true;
         for (int i = 0; i < ranks.length; i++) {
             if (scoreMap.get(ranks[i]) > scores[i]) {
-                valid = false;
-                break;
+                return false;
             }
         }
-        return valid;
+        return true;
     }
 }

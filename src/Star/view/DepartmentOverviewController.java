@@ -1,5 +1,6 @@
 package Star.view;
 
+import Star.MainApp;
 import Star.model.BriefDepartment;
 import Star.model.Department;
 import Star.model.SchoolDepartment;
@@ -12,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,13 +63,10 @@ public class DepartmentOverviewController {
     @FXML
     private ChoiceBox<String> CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox;
     private List<ChoiceBox<String>> scoreBoxes;
-    int[] scores = new int[7];
+    int[] scales = new int[7];
     @FXML
     private CheckBox filterCheckBox;
     boolean filterEnabled = false;
-
-    final int BEGIN_YEAR = 109;
-    final int END_YEAR = 112;
 
     SchoolDepartment schoolDepartment = new SchoolDepartment();
     
@@ -116,7 +113,7 @@ public class DepartmentOverviewController {
         rec111Cell.setCellValueFactory(b -> b.getValue().recruits[6]);
 
         scoreBoxes = Arrays.asList(CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox);
-        for (int i = 0; i < scores.length - 1; i++) {
+        for (int i = 0; i < scales.length - 1; i++) {
             scoreBoxes.get(i).getItems().setAll("無標", "底標", "後標", "均標", "前標", "頂標");
             scoreBoxes.get(i).getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
             scoreBoxes.get(i).getSelectionModel().select(5);
@@ -156,18 +153,18 @@ public class DepartmentOverviewController {
     }
 
     private void updateDepartmentList() {
-        departmentListView.getItems().setAll(ListViewUtil.getDepartmentList(schoolDepartment, filterEnabled, scores));
+        departmentListView.getItems().setAll(ListViewUtil.getDepartmentList(schoolDepartment, filterEnabled, scales));
     }
 
     private void updateFavoritesList() {
-        favorList.forEach(b -> b.validate(scores));
+        favorList.forEach(b -> b.validate(scales));
         multiView.refresh();
     }
 
     @FXML
     private void updateFilter() {
-        for (int i = 0; i < scores.length; i++) {
-            scores[i] = scoreBoxes.get(i).getSelectionModel().getSelectedIndex();
+        for (int i = 0; i < scales.length; i++) {
+            scales[i] = scoreBoxes.get(i).getSelectionModel().getSelectedIndex();
         }
         filterEnabled = filterCheckBox.isSelected();
         String school = schoolListView.getSelectionModel().getSelectedItem();
@@ -178,11 +175,13 @@ public class DepartmentOverviewController {
     private void show() {
         DepartmentSearcher searcher = new DepartmentSearcher();
         Department department;
-        for (int i = 0; i <= END_YEAR - BEGIN_YEAR; i++) {
-            department = searcher.search(String.valueOf(BEGIN_YEAR + i), schoolDepartment);
-            rankLabels[i].setText(department.getRank());
-            fil1Labels[i].setText(department.getFil1());
-            fil2Labels[i].setText(department.getFil2());
+        int startYear = MainApp.SOLO_START_YEAR;
+        int endYear = MainApp.SOLO_END_YEAR;
+        for (int i = 0; i <= endYear - startYear; i++) {
+            department = searcher.search(String.valueOf(startYear + i), schoolDepartment);
+            rankLabels[i].setText(department.getScale());
+            fil1Labels[i].setText(department.getStage1());
+            fil2Labels[i].setText(department.getStage2());
         }
 
         navigationLabel.setText(schoolDepartment.toReminderString());

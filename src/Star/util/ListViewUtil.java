@@ -1,5 +1,6 @@
 package Star.util;
 
+import Star.filter.Filter;
 import Star.model.SchoolDepartment;
 import com.opencsv.CSVReader;
 
@@ -38,7 +39,7 @@ public class ListViewUtil {
             while ((data = reader.readNext()) != null) {
                 if (filterEnabled) {
                     String[] ranks = data[4].split("\n");
-                    if (!FilterUtil.filter(ranks, scores)) continue;
+                    if (!Filter.filter(ranks, scores)) continue;
                 }
                 String code = data[0];
                 String name = data[1];
