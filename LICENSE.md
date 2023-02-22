@@ -1,3 +1,1 @@
-DO NOT COPY AND MODIFY
-
-Copyright (c) 2022 NatsuCamellia
+Copyright © 2023 NatsuCamellia. All Rights Reserved
