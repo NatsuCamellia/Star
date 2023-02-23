@@ -16,15 +16,15 @@ public class MainApp extends Application {
     public static final int SCALE_YEAR = 112;
     public static final int MULTI_START_YEAR = 105;
     public static final int MULTI_END_YEAR = 111;
-    public static final int SOLO_START_YEAR = 108;
-    public static final int SOLO_END_YEAR = 111;
+    public static final int SOLO_START_YEAR = 109;
+    public static final int SOLO_END_YEAR = 112;
     
     private Stage primaryStage;
 
     @Override
     public void start(Stage primaryStage) {     
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("繁星望遠鏡 v1.2.3");
+        this.primaryStage.setTitle("繁星望遠鏡 v1.2.3.1");
         this.primaryStage.setResizable(true);
         Image icon = new Image(Objects.requireNonNull(MainApp.class.getResourceAsStream("/images/icon.png")));
         this.primaryStage.getIcons().add(icon);
