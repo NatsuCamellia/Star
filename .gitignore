@@ -2,3 +2,5 @@
 /.vscode
 /App.iml
 /out
+.DS_Store
+/target
