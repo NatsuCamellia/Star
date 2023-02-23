@@ -15,7 +15,7 @@ import java.util.List;
 public class IOUtil {
 
     final static String PATH_WIN = "Favorite.dat";
-    final static String PATH_MAC = "/Applications/繁星望遠鏡.app/Contents/app/Favorite.dat";
+    final static String PATH_MAC = "/Applications/StarTelescope.app/Contents/app/Favorite.dat";
     static String path;
 
     public static void initialize() {
