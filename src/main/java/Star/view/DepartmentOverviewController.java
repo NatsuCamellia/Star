@@ -114,13 +114,13 @@ public class DepartmentOverviewController {
 
         scoreBoxes = Arrays.asList(CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox);
         for (int i = 0; i < scales.length - 1; i++) {
-            scoreBoxes.get(i).getItems().setAll("無標", "底標", "後標", "均標", "前標", "頂標");
+            scoreBoxes.get(i).getItems().setAll("頂標", "前標", "均標", "後標", "底標", "無標");
             scoreBoxes.get(i).getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
-            scoreBoxes.get(i).getSelectionModel().select(5);
+            scoreBoxes.get(i).getSelectionModel().select(0);
         }
-        ELBox.getItems().setAll("無成績", "F", "C", "B", "A");
+        ELBox.getItems().setAll("A", "B", "C", "F", "無成績");
         ELBox.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
-        ELBox.getSelectionModel().select(4);
+        ELBox.getSelectionModel().select(0);
     }
 
     private void onSchoolListSelect() {
@@ -164,7 +164,7 @@ public class DepartmentOverviewController {
     @FXML
     private void updateFilter() {
         for (int i = 0; i < scales.length; i++) {
-            scales[i] = scoreBoxes.get(i).getSelectionModel().getSelectedIndex();
+            scales[i] = 5 - scoreBoxes.get(i).getSelectionModel().getSelectedIndex();
         }
         filterEnabled = filterCheckBox.isSelected();
         String school = schoolListView.getSelectionModel().getSelectedItem();
