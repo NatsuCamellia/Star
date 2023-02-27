@@ -15,7 +15,7 @@
 
 
 ## 版本與下載
-* [前往版本頁面](https://github.com/NatsuCamellia/Star/releases)
+* [前往版本頁面](https://github.com/NatsuCamellia/Star/releases)在 Assets 中選擇檔案下載
 
 ## 可查詢紀錄
 * 預計招收人數
