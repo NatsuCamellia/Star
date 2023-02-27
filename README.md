@@ -15,11 +15,7 @@
 
 
 ## 版本與下載
-* 最新版本 [v1.2.2](https://github.com/NatsuCamellia/Star/releases/latest)
-* 下載連結 
-  * [MacOS v1.2.2](https://github.com/NatsuCamellia/Star/releases/download/v1.2.2/Star.Telescope-1.2.2.dmg)
-  * [Windows v1.2.2](https://github.com/NatsuCamellia/Star/releases/download/v1.2.2/Star.Telescope-1.2.2.zip)
-
+* [前往版本頁面](https://github.com/NatsuCamellia/Star/releases)
 
 ## 可查詢紀錄
 * 預計招收人數
