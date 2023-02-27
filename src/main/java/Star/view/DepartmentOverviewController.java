@@ -191,7 +191,7 @@ public class DepartmentOverviewController {
     @FXML
     private void addFavorite() {
         if (schoolDepartment.getDepartmentCode() == null) return;
-        favorList.add(DepartmentSearcher.getBriefDepartment(schoolDepartment));
+        favorList.add(DepartmentSearcher.getBriefDepartment(SchoolDepartment.copyOf(schoolDepartment)));
         updateFavoritesList();
         IOUtil.writeFavorite(favorList);
     }
