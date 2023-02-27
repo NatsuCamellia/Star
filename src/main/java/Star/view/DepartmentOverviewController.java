@@ -136,6 +136,7 @@ public class DepartmentOverviewController {
         if (departmentListView.getSelectionModel().getSelectedItem() == null) return;
 
         // Update selected department
+        schoolDepartment.setSchool(schoolListView.getSelectionModel().getSelectedItem());
         schoolDepartment.setDepartment(departmentListView.getSelectionModel().getSelectedItem());
 
         // Clear favorite list selection, for visual reason
@@ -147,7 +148,7 @@ public class DepartmentOverviewController {
         BriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
         multiView.getSelectionModel().select(selectedItem);
         if (selectedItem == null) return;
-        schoolDepartment = selectedItem.getSchoolDepartment();
+        schoolDepartment = SchoolDepartment.copyOf(selectedItem.getSchoolDepartment());
         departmentListView.getSelectionModel().clearSelection();
         show();
     }

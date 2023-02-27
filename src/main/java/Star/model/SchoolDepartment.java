@@ -45,6 +45,13 @@ public class SchoolDepartment implements Serializable {
         departmentName = name;
     }
 
+    public static SchoolDepartment copyOf(SchoolDepartment schoolDepartment) {
+        SchoolDepartment toReturn = new SchoolDepartment();
+        toReturn.setSchool(schoolDepartment.getSchoolCode(), schoolDepartment.getSchoolName());
+        toReturn.setDepartment(schoolDepartment.getDepartmentCode(), schoolDepartment.getDepartmentName());
+        return toReturn;
+    }
+
     public String toReminderString() {
         return String.format("%s %s > %s", departmentCode, schoolName, departmentName);
     }
