@@ -4,11 +4,11 @@
 
 ## 目錄
 
-1. [功能](https://github.com/NatsuCamellia/Star/edit/master/README.md#功能)
-2. [版本與下載](https://github.com/NatsuCamellia/Star/edit/master/README.md#版本與下載)
-3. [操作說明](https://github.com/NatsuCamellia/Star/edit/master/README.md#操作說明)
-4. [註記](https://github.com/NatsuCamellia/Star/edit/master/README.md#註記)
-5. [Q&A](https://github.com/NatsuCamellia/Star/edit/master/README.md#Q&A)
+1. [功能](https://github.com/NatsuCamellia/Star#功能)
+2. [版本與下載](https://github.com/NatsuCamellia/Star#版本與下載)
+3. [操作說明](https://github.com/NatsuCamellia/Star#操作說明)
+4. [註記](https://github.com/NatsuCamellia/Star#註記)
+5. [Q&A](https://github.com/NatsuCamellia/Star#Q&A)
 
 
 ## 功能
