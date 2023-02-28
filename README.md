@@ -8,7 +8,7 @@
 2. [版本與下載](https://github.com/NatsuCamellia/Star#版本與下載)
 3. [操作說明](https://github.com/NatsuCamellia/Star#操作說明)
 4. [註記](https://github.com/NatsuCamellia/Star#註記)
-5. [Q&A](https://github.com/NatsuCamellia/Star#Q&A)
+5. [Q&A](https://github.com/NatsuCamellia/Star#qa)
 
 
 ## 功能
