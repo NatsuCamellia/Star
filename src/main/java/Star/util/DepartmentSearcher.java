@@ -68,8 +68,13 @@ public class DepartmentSearcher {
             data = searchByDepartment(departmentName, reader);
 
             int index = year - startYear;
-            recruits[index] = data[3];
-            percents[index] = data[7].split("\n")[0];
+            if (data != null) {
+                recruits[index] = data[3];
+                percents[index] = data[7].split("\n")[0];
+            } else {
+                recruits[index] = "--";
+                percents[index] = "--";
+            }
         }
 
         return new BriefDepartment(schoolDepartment, recruits, scales, percents);
