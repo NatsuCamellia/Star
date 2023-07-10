@@ -38,13 +38,10 @@ public class DataParser {
         stage1 = getStage(recruitMax, recruitStage1, filters, resultStage1);
 
         // 3. Stage 2
-        // Not published yet
-        if (year.equals("112")) {
-            stage2 = stage1;
         // Recruited some students
-        } else if (!data[8].equals("--")) {
+        if (!data[8].equals("--")) {
             stage2 = getStage(recruitMax, recruitStage2, filters, resultStage2);
-            // No stage 2
+        // No stage 2
         } else {
             stage2 = "無第二輪";
         }
