@@ -24,7 +24,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {     
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("繁星望遠鏡 v1.2.5.1");
+        this.primaryStage.setTitle("繁星望遠鏡 v1.2.5.2");
         this.primaryStage.setResizable(true);
         Image icon = new Image(Objects.requireNonNull(MainApp.class.getResourceAsStream("/images/icon.png")));
         this.primaryStage.getIcons().add(icon);
