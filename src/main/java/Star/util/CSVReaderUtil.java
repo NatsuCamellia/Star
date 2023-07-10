@@ -1,6 +1,7 @@
 package Star.util;
 
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 import Star.MainApp;
@@ -27,7 +28,7 @@ public class CSVReaderUtil {
     private static CSVReader getReader(String year, String code) {
         String csv_path = "/csv/%s/%s_%s.csv";
         String path = String.format(csv_path, year, year, code);
-        InputStreamReader isr = new InputStreamReader(Objects.requireNonNull(MainApp.class.getResourceAsStream(path)));
+        InputStreamReader isr = new InputStreamReader(Objects.requireNonNull(MainApp.class.getResourceAsStream(path)), StandardCharsets.UTF_8);
         return new CSVReader(isr);
     }
 }
