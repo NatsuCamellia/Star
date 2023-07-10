@@ -1,11 +1,11 @@
 @font-face {
-    src: url("/font/LXGWWenKai-Regular.ttf");
+    src: url("/font/NotoSansTC-Light.otf");
 }
 
 .root {
-    -fx-font-family: "LXGW WenKai";
+    -fx-font-family: "Noto Sans TC Light";
 }
 
 .label {
-    -fx-font-family: "LXGW WenKai";
+    -fx-font-family: "Noto Sans TC Light";
 }
