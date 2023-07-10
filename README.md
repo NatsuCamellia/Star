@@ -20,7 +20,12 @@
 * 自動比對是否符合標準
 
 ## 版本與下載
-* [前往版本頁面](https://github.com/NatsuCamellia/Star/releases)在 Assets 中選擇檔案下載
+
+> 目前最新內容為 112 年放榜結果。
+
+1. [前往版本頁面](https://github.com/NatsuCamellia/Star/releases)在 Assets 中選擇檔案下載
+2. 【只需要做一次】版本 1.2.5 後，請下載並安裝 JDK 17，有很多網站可供下載，這裡提供 [Temurin]([https://adoptium.net/temurin/releases/](https://adoptium.net/temurin/releases/?version=17))，懶人載點 [Windows](https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_windows_hotspot_17.0.7_7.msi)，[macOS M1/M2]()
+3. 安裝完成後即可雙擊開啟程式，如果詢問「您要如何開啟此檔案」，則選擇 OpenJDK 或其他你下載的 Java。
 
 ## 操作說明
 
