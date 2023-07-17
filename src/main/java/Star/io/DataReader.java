@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class DataReader {
         try {
             InputStream is = StarTelescope.class.getResourceAsStream("/json/schools.json");
             assert is != null;
-            Reader reader = new InputStreamReader(is);
+            Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
             schoolList = gson.fromJson(reader, new TypeToken<List<School>>(){}.getType());
             reader.close();
             return schoolList;
@@ -47,7 +48,7 @@ public class DataReader {
             String path = String.format("/json/%s/%s.json", schoolCode, identifier.toString().replace('/', '-'));
             InputStream is = StarTelescope.class.getResourceAsStream(path);
             assert is != null;
-            Reader reader = new InputStreamReader(is);
+            Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8);
 
             Department department = gson.fromJson(reader, Department.class);
             reader.close();
@@ -84,7 +85,7 @@ public class DataReader {
     public ObservableList<BriefDepartment> getFavoriteList() {
         ObservableList<BriefDepartment> favoriteList = FXCollections.observableArrayList();
         try {
-            Reader reader = new FileReader(StarTelescope.FAVORITE_PATH);
+            Reader reader = new FileReader(StarTelescope.FAVORITE_PATH, StandardCharsets.UTF_8);
             List<FavoriteIdentifier> identifierList
                     = gson.fromJson(reader, new TypeToken<ArrayList<FavoriteIdentifier>>() {
             }.getType());

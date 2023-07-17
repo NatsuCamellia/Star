@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 
 import java.io.FileWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class DataWriter {
@@ -19,7 +20,7 @@ public class DataWriter {
         List<FavoriteIdentifier> identifierList = favorList.stream().map(x -> x.toFavoriteIdentifier()).toList();
 
         try {
-            Writer writer = new FileWriter(PATH);
+            Writer writer = new FileWriter(PATH, StandardCharsets.UTF_8);
             gson.toJson(identifierList, writer);
             writer.close();
         } catch (Exception e) {
