@@ -1,0 +1,87 @@
+{
+  "code": "03014",
+  "name": "人工智慧學系",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 7,
+      "admissionOne": 3,
+      "admissionTwo": 4,
+      "quota": 7,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "30%"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "數學學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "22%"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "數學學業"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "code": "00142",
+  "name": "經濟學系B組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 9,
+      "admissionOne": 2,
+      "admissionTwo": 7,
+      "quota": 9,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "頂標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "前標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "11%"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "3%"
+        },
+        {
+          "subject": "學測英數A自",
+          "value": "35"
+        },
+        {
+          "subject": "學測數A",
+          "value": "11"
+        },
+        {
+          "subject": "數學學業",
+          "value": "1%"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ]
+    },
+    {
+      "year": 111,
+      "admissionsAll": 9,
+      "admissionOne": 2,
+      "admissionTwo": 7,
+      "quota": 9,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "頂標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "前標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "7%"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "5%"
+        },
+        {
+          "subject": "學測英數A自",
+          "value": "38"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ]
+    }
+  ]
+}

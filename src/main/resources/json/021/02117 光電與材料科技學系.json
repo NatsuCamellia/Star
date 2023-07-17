@@ -1,0 +1,427 @@
+{
+  "code": "02117",
+  "name": "光電與材料科技學系",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "9%"
+        },
+        {
+          "subject": "學測國英數A自",
+          "value": "43"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測國英數A自"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ]
+    },
+    {
+      "year": 111,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "13%"
+        },
+        {
+          "subject": "學測國英數A自",
+          "value": "45"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 110,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學",
+          "value": "前標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "11%"
+        },
+        {
+          "subject": "學測國英數自"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 109,
+      "admissionsAll": 6,
+      "admissionOne": 6,
+      "admissionTwo": 0,
+      "quota": 6,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學",
+          "value": "前標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "22%"
+        },
+        {
+          "subject": "學測國英數自"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 108,
+      "admissionsAll": 7,
+      "admissionOne": 0,
+      "admissionTwo": 7,
+      "quota": 7,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學",
+          "value": "前標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測國英數自"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "23%"
+        },
+        {
+          "subject": "學測國英數自"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ]
+    },
+    {
+      "year": 107,
+      "admissionsAll": 7,
+      "admissionOne": 4,
+      "admissionTwo": 3,
+      "quota": 7,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學",
+          "value": "前標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "均標"
+        },
+        {
+          "subject": "英聽",
+          "value": "均標"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "37%"
+        },
+        {
+          "subject": "學測總級分"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "16%"
+        },
+        {
+          "subject": "學測總級分"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ]
+    }
+  ]
+}

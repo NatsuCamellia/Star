@@ -1,0 +1,166 @@
+{
+  "code": "01529",
+  "name": "應用數學系A組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 9,
+      "admissionOne": 1,
+      "admissionTwo": 8,
+      "quota": 9,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "後標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "後標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "9%"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "37%"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ]
+    },
+    {
+      "year": 111,
+      "admissionsAll": 8,
+      "admissionOne": 1,
+      "admissionTwo": 7,
+      "quota": 9,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "後標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "29%"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "49%"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ]
+    }
+  ]
+}

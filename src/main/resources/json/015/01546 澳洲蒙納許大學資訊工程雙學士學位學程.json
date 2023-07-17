@@ -1,0 +1,84 @@
+{
+  "code": "01546",
+  "name": "澳洲蒙納許大學資訊工程雙學士學位學程",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 0,
+      "admissionOne": 0,
+      "admissionTwo": 0,
+      "quota": 3,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ]
+    }
+  ]
+}

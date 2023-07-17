@@ -1,0 +1,84 @@
+{
+  "code": "07917",
+  "name": "國際企業與貿易學系社會組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 6,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "底標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "47%"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ]
+    }
+  ]
+}

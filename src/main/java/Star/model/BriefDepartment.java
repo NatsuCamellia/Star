@@ -6,7 +6,8 @@ import javafx.beans.property.StringProperty;
 
 public class BriefDepartment {
 
-    private final SchoolDepartment schoolDepartment;
+    private final School school;
+    private final Department department;
     public StringProperty schoolName;
     public StringProperty departmentName;
     public StringProperty valid;
@@ -16,26 +17,36 @@ public class BriefDepartment {
 
     public String[] ranksRaw;
 
-    public BriefDepartment(SchoolDepartment schoolDepartment, String[] recruits, String[] ranks, String[] percents) {
-        this.schoolDepartment = schoolDepartment;
-        this.schoolName = new SimpleStringProperty(schoolDepartment.getSchoolName());
-        this.departmentName = new SimpleStringProperty(schoolDepartment.getDepartmentName());
-        this.ranksRaw = ranks;
+    public BriefDepartment(School school, Department department, int[] admissionAll, String[] requirements, String[] percents) {
+        this.school = school;
+        this.department = department;
+        this.schoolName = new SimpleStringProperty(school.getName());
+        this.departmentName = new SimpleStringProperty(department.getName());
+        this.ranksRaw = requirements;
         for (int i = 0; i < 7; i++) {
-            this.ranks[i] = new SimpleStringProperty(ranks[i]);
+            this.ranks[i] = new SimpleStringProperty(requirements[i]);
         }
         for (int i = 0; i < 7; i++) {
-            this.recruits[i] = new SimpleStringProperty(recruits[i]);
+            this.recruits[i] = new SimpleStringProperty(String.valueOf(admissionAll[i]));
             this.percents[i] = new SimpleStringProperty(percents[i]);
         }
     }
 
-    public SchoolDepartment getSchoolDepartment() {
-        return schoolDepartment;
+    public School getSchool() {
+        return school;
     }
 
-    public void validate (int[] scores) {
+    public Department getDepartment() {
+        return department;
+    }
+
+    public boolean validate (int[] scores) {
         String s = Filter.filter(ranksRaw, scores) ? "O" : "X";
         valid = new SimpleStringProperty(s);
+        return s.equals("O");
+    }
+
+    public FavoriteIdentifier toFavoriteIdentifier() {
+        return new FavoriteIdentifier(school, department);
     }
 }

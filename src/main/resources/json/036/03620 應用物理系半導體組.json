@@ -1,0 +1,86 @@
+{
+  "code": "03620",
+  "name": "應用物理系半導體組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 9,
+      "admissionOne": 9,
+      "admissionTwo": 0,
+      "quota": 9,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "底標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "底標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "22%"
+        },
+        {
+          "subject": "學測自然",
+          "value": "10"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "化學學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "化學學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ]
+    }
+  ]
+}

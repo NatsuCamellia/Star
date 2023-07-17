@@ -1,0 +1,87 @@
+{
+  "code": "01311",
+  "name": "電機工程學系乙組(電機工程組)【外加】",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 2,
+      "admissionOne": 2,
+      "admissionTwo": 0,
+      "quota": 2,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "頂標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "頂標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "9%"
+        },
+        {
+          "subject": "數學學業",
+          "value": "5%"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測英數A自"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ]
+    }
+  ]
+}

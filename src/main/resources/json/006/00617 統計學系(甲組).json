@@ -1,0 +1,89 @@
+{
+  "code": "00617",
+  "name": "統計學系(甲組)",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "均標"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "1%"
+        },
+        {
+          "subject": "學測數A",
+          "value": "8"
+        },
+        {
+          "subject": "學測英文",
+          "value": "10"
+        },
+        {
+          "subject": "學測國英數A社"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "歷史學業"
+        },
+        {
+          "subject": "地理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國英數A社"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "歷史學業"
+        },
+        {
+          "subject": "地理學業"
+        }
+      ]
+    }
+  ]
+}

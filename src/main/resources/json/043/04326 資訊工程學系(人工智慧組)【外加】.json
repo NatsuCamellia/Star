@@ -1,0 +1,83 @@
+{
+  "code": "04326",
+  "name": "資訊工程學系(人工智慧組)【外加】",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 0,
+      "admissionOne": 0,
+      "admissionTwo": 0,
+      "quota": 1,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "底標"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "資訊科技學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英自"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "資訊科技學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測國英自"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測自然"
+        }
+      ]
+    }
+  ]
+}

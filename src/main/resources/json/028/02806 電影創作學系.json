@@ -1,0 +1,499 @@
+{
+  "code": "02806",
+  "name": "電影創作學系",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 4,
+      "admissionOne": 3,
+      "admissionTwo": 1,
+      "quota": 4,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "頂標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "B級"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "14%"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "8%"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ]
+    },
+    {
+      "year": 111,
+      "admissionsAll": 4,
+      "admissionOne": 4,
+      "admissionTwo": 0,
+      "quota": 4,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "頂標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "B級"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "9%"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 110,
+      "admissionsAll": 4,
+      "admissionOne": 4,
+      "admissionTwo": 0,
+      "quota": 4,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "5%"
+        },
+        {
+          "subject": "學測國文",
+          "value": "14"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "國文學業"
+        },
+        {
+          "subject": "英文學業"
+        },
+        {
+          "subject": "公社學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 109,
+      "admissionsAll": 6,
+      "admissionOne": 6,
+      "admissionTwo": 0,
+      "quota": 6,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "12%"
+        },
+        {
+          "subject": "學測國文",
+          "value": "14"
+        },
+        {
+          "subject": "學測英文",
+          "value": "13"
+        },
+        {
+          "subject": "學測社會"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 108,
+      "admissionsAll": 8,
+      "admissionOne": 8,
+      "admissionTwo": 0,
+      "quota": 8,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學",
+          "value": "均標"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "15%"
+        },
+        {
+          "subject": "學測國文",
+          "value": "14"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測社會"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 107,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學",
+          "value": "均標"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "9%"
+        },
+        {
+          "subject": "學測總級分"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測社會"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 106,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學",
+          "value": "均標"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "5%"
+        },
+        {
+          "subject": "學測總級分",
+          "value": "63"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測社會"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 105,
+      "admissionsAll": 5,
+      "admissionOne": 5,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學",
+          "value": "均標"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "5%"
+        },
+        {
+          "subject": "學測總級分",
+          "value": "55"
+        },
+        {
+          "subject": "學測國文",
+          "value": "14"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測社會"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

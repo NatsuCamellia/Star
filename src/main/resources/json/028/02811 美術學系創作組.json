@@ -1,0 +1,86 @@
+{
+  "code": "02811",
+  "name": "美術學系創作組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 4,
+      "admissionOne": 4,
+      "admissionTwo": 0,
+      "quota": 4,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "均標"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "B級"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "14%"
+        },
+        {
+          "subject": "術科素描"
+        },
+        {
+          "subject": "美術學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "術科素描"
+        },
+        {
+          "subject": "美術學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "code": "03409",
+  "name": "管理學院會計與資訊管理國際學士班智慧會計與風險管理組",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 3,
+      "admissionOne": 1,
+      "admissionTwo": 2,
+      "quota": 3,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "30%"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "28%"
+        },
+        {
+          "subject": "學測國英數A"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "code": "04534",
+  "name": "半導體學士學位學程",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 1,
+      "admissionOne": 0,
+      "admissionTwo": 1,
+      "quota": 3,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "後標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國英"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "39%"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國英"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "物理學業"
+        }
+      ]
+    }
+  ]
+}

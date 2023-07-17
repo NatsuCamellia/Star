@@ -1,0 +1,280 @@
+{
+  "code": "04604",
+  "name": "會計學系會計審計組（臺北校區）",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 15,
+      "admissionOne": 12,
+      "admissionTwo": 3,
+      "quota": 15,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "底標"
+        },
+        {
+          "subject": "英文",
+          "value": "底標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ",
+          "value": "底標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "40%"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測數B"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "20%"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測數B"
+        }
+      ]
+    },
+    {
+      "year": 111,
+      "admissionsAll": 16,
+      "admissionOne": 9,
+      "admissionTwo": 7,
+      "quota": 16,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "後標"
+        },
+        {
+          "subject": "英文",
+          "value": "後標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ",
+          "value": "後標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "45%"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測數B"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "36%"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測數B"
+        }
+      ]
+    },
+    {
+      "year": 108,
+      "admissionsAll": 11,
+      "admissionOne": 11,
+      "admissionTwo": 0,
+      "quota": 11,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "後標"
+        },
+        {
+          "subject": "英文",
+          "value": "後標"
+        },
+        {
+          "subject": "數學",
+          "value": "後標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "29%"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "國文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "year": 107,
+      "admissionsAll": 11,
+      "admissionOne": 11,
+      "admissionTwo": 0,
+      "quota": 11,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "後標"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "27%"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "英文學業"
+        },
+        {
+          "subject": "學測數學"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "數學學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

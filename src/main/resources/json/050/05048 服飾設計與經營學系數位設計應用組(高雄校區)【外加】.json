@@ -1,0 +1,83 @@
+{
+  "code": "05048",
+  "name": "服飾設計與經營學系數位設計應用組(高雄校區)【外加】",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 0,
+      "admissionOne": 0,
+      "admissionTwo": 0,
+      "quota": 2,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會",
+          "value": "底標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "歷史學業"
+        },
+        {
+          "subject": "公社學業"
+        },
+        {
+          "subject": "地理學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "歷史學業"
+        },
+        {
+          "subject": "公社學業"
+        },
+        {
+          "subject": "地理學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "code": "05136",
+  "name": "資訊工程學系",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 3,
+      "admissionOne": 2,
+      "admissionTwo": 1,
+      "quota": 6,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "底標"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "39%"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "資訊科技學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "47%"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "資訊科技學業"
+        }
+      ]
+    },
+    {
+      "year": 107,
+      "admissionsAll": 5,
+      "admissionOne": 4,
+      "admissionTwo": 1,
+      "quota": 8,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "底標"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "48%"
+        },
+        {
+          "subject": "學測國文"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "27%"
+        },
+        {
+          "subject": "學測國文"
+        }
+      ]
+    },
+    {
+      "year": 106,
+      "admissionsAll": 8,
+      "admissionOne": 2,
+      "admissionTwo": 6,
+      "quota": 8,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "底標"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "38%"
+        },
+        {
+          "subject": "學測英文"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "46%"
+        },
+        {
+          "subject": "學測英文"
+        }
+      ]
+    },
+    {
+      "year": 105,
+      "admissionsAll": 6,
+      "admissionOne": 0,
+      "admissionTwo": 6,
+      "quota": 6,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽",
+          "value": "底標"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測英文"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "47%"
+        },
+        {
+          "subject": "學測英文"
+        }
+      ]
+    }
+  ]
+}

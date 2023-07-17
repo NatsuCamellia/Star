@@ -1,0 +1,85 @@
+{
+  "code": "04642",
+  "name": "資訊管理學系人工智慧應用組（桃園校區）",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 10,
+      "admissionOne": 3,
+      "admissionTwo": 7,
+      "quota": 10,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "底標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "41%"
+        },
+        {
+          "subject": "學測國英"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "49%"
+        },
+        {
+          "subject": "學測國英"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "code": "05042",
+  "name": "金融管理學系投資策略組(高雄校區)",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 2,
+      "admissionOne": 1,
+      "admissionTwo": 1,
+      "quota": 8,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文",
+          "value": "底標"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "36%"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "化學學業"
+        },
+        {
+          "subject": "生物學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "46%"
+        },
+        {
+          "subject": "英語文學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "物理學業"
+        },
+        {
+          "subject": "化學學業"
+        },
+        {
+          "subject": "生物學業"
+        }
+      ]
+    }
+  ]
+}

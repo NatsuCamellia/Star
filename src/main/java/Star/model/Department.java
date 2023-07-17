@@ -1,34 +1,43 @@
 package Star.model;
 
+import java.util.List;
+
 public class Department {
+    private String code;
+    private String name;
+    private List<Result> results;
 
-    private final String scale;
-    private final String stage1;
-    private final String stage2;
-
-    public Department(String scale, String stage1, String stage2) {
-        this.scale = scale;
-        this.stage1 = stage1;
-        this.stage2 = stage2;
+    public Department(String code, String name, List<Result> results) {
+        this.code = code;
+        this.name = name;
+        this.results = results;
     }
 
     public Department() {
-        this.scale = "無資料";
-        this.stage1 = "無資料";
-        this.stage2 = "無資料";
+
     }
 
-    public String getScale() {
-        return scale;
+    public String getCode() {
+        return code;
     }
 
-    public String getStage1() {
-        return stage1;
+    public String getName() {
+        return name;
     }
 
-    public String getStage2() {
-        return stage2;
+    public List<Result> getResults() {
+        return results;
     }
 
+    public Result getResultOfYear(int year) {
+        for (Result result : results) {
+            if (result.getYear() == year) return result;
+        }
 
+        return null;
+    }
+
+    public DepartmentIdentifier getIdentifier() {
+        return new DepartmentIdentifier(code, name);
+    }
 }

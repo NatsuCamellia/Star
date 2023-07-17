@@ -1,0 +1,87 @@
+{
+  "code": "01138",
+  "name": "藝術學院學士班(科技藝術組)",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 2,
+      "admissionOne": 2,
+      "admissionTwo": 0,
+      "quota": 5,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "均標"
+        },
+        {
+          "subject": "英文",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "均標"
+        },
+        {
+          "subject": "數學Ｂ",
+          "value": "均標"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "7%"
+        },
+        {
+          "subject": "美術學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "資訊科技學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "美術學業"
+        },
+        {
+          "subject": "數學學業"
+        },
+        {
+          "subject": "國語文學業"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "資訊科技學業"
+        }
+      ]
+    }
+  ]
+}

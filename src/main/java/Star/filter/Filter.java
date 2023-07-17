@@ -15,6 +15,7 @@ public class Filter {
         scoreMap.put("C級", 2);
         scoreMap.put("B級", 3);
         scoreMap.put("A級", 4);
+        scoreMap.put(null, 0);
     }
 
     public static boolean filter (String[] ranks, int[] scores) {

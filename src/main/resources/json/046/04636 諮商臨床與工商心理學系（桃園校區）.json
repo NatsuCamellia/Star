@@ -1,0 +1,84 @@
+{
+  "code": "04636",
+  "name": "諮商臨床與工商心理學系（桃園校區）",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 12,
+      "admissionOne": 12,
+      "admissionTwo": 0,
+      "quota": 12,
+      "requirements": [
+        {
+          "subject": "國文"
+        },
+        {
+          "subject": "英文"
+        },
+        {
+          "subject": "數學Ａ"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會",
+          "value": "均標"
+        },
+        {
+          "subject": "自然"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "39%"
+        },
+        {
+          "subject": "學測國英數B社"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數B"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業"
+        },
+        {
+          "subject": "學測國英數B社"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數B"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "學測社會"
+        },
+        {
+          "subject": "英語文學業"
+        }
+      ]
+    }
+  ]
+}

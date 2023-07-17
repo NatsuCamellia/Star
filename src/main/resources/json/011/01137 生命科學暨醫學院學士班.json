@@ -1,0 +1,88 @@
+{
+  "code": "01137",
+  "name": "生命科學暨醫學院學士班",
+  "results": [
+    {
+      "year": 112,
+      "admissionsAll": 4,
+      "admissionOne": 2,
+      "admissionTwo": 2,
+      "quota": 7,
+      "requirements": [
+        {
+          "subject": "國文",
+          "value": "前標"
+        },
+        {
+          "subject": "英文",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ａ",
+          "value": "前標"
+        },
+        {
+          "subject": "數學Ｂ"
+        },
+        {
+          "subject": "社會"
+        },
+        {
+          "subject": "自然",
+          "value": "頂標"
+        },
+        {
+          "subject": "英聽"
+        }
+      ],
+      "filterOne": [
+        {
+          "subject": "在校學業",
+          "value": "8%"
+        },
+        {
+          "subject": "學測國英數A自"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "生物學業"
+        }
+      ],
+      "filterTwo": [
+        {
+          "subject": "在校學業",
+          "value": "8%"
+        },
+        {
+          "subject": "學測國英數A自"
+        },
+        {
+          "subject": "學測自然"
+        },
+        {
+          "subject": "學測英文"
+        },
+        {
+          "subject": "學測數A"
+        },
+        {
+          "subject": "學測國文"
+        },
+        {
+          "subject": "生物學業"
+        }
+      ]
+    }
+  ]
+}
