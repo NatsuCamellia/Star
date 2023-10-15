@@ -1,14 +1,18 @@
 package Star.view;
 
 import Star.StarTelescope;
-import Star.model.*;
+import Star.model.ObservableBriefDepartment;
 import Star.io.*;
+import idv.natsucamellia.StarAPI.core.StarAPI;
+import idv.natsucamellia.StarAPI.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,10 +26,10 @@ public class DepartmentOverviewController {
     private ListView<School> schoolListView;
     // 最愛清單
     @FXML
-    private TableView<BriefDepartment> favorTableView;
-    private ObservableList<BriefDepartment> favorList = FXCollections.observableArrayList();
+    private TableView<ObservableBriefDepartment> favorTableView;
+    private ObservableList<ObservableBriefDepartment> observableFavorList = FXCollections.observableArrayList();
     @FXML
-    private TableColumn<BriefDepartment, String> favorSchoolCell, favorDepartmentCell;
+    private TableColumn<ObservableBriefDepartment, String> favorSchoolCell, favorDepartmentCell;
 
     // 單一檢視
     @FXML
@@ -42,9 +46,9 @@ public class DepartmentOverviewController {
 
     // 多重顯示
     @FXML
-    private TableView<BriefDepartment> multiView;
+    private TableView<ObservableBriefDepartment> multiView;
     @FXML
-    private TableColumn<BriefDepartment, String>
+    private TableColumn<ObservableBriefDepartment, String>
             validCell,
             CNCell, ENCell, MACell, MBCell, SOCell, SCCell, ELCell,
             rec106Cell, rec107Cell, rec108Cell, rec109Cell, rec110Cell, rec111Cell, rec112Cell,
@@ -67,7 +71,11 @@ public class DepartmentOverviewController {
     boolean filterEnabled = false;
 
     // Fields
-    DataReader dataReader = new DataReader();
+    StarAPI starAPI = new StarAPI(
+            StarTelescope.SOLO_START_YEAR,
+            StarTelescope.MULTI_END_YEAR,
+            StarTelescope.MULTI_START_YEAR,
+            StarTelescope.SOLO_END_YEAR);
     DataWriter dataWriter = new DataWriter();
     
     public void initialize() {
@@ -77,7 +85,7 @@ public class DepartmentOverviewController {
         fil2Labels = new Label[]{fil2_109, fil2_110, fil2_111, fil2_112};
 
         // School List
-        schoolListView.getItems().setAll(dataReader.getSchoolList());
+        schoolListView.getItems().setAll(starAPI.getSchoolList());
         schoolListView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> onSchoolListSelect());
         schoolListView.getSelectionModel().select(0);
 
@@ -86,14 +94,15 @@ public class DepartmentOverviewController {
         departmentListView.getSelectionModel().select(0);
 
         // Favorite List
-        favorList = dataReader.getFavoriteList();
+        List<BriefDepartment> favorList = starAPI.getFavoriteList(new File(StarTelescope.FAVORITE_PATH));
+        observableFavorList = FXCollections.observableList(favorList.stream().map(ObservableBriefDepartment::new).toList());
         favorTableView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorTableViewSelected());
-        favorTableView.setItems(favorList);
+        favorTableView.setItems(observableFavorList);
         favorSchoolCell.setCellValueFactory(b -> b.getValue().schoolName);
         favorDepartmentCell.setCellValueFactory(b -> b.getValue().departmentName);
 
         // Multi view
-        multiView.setItems(favorList);
+        multiView.setItems(observableFavorList);
         validCell.setCellValueFactory(b -> b.getValue().valid);
         CNCell.setCellValueFactory(b -> b.getValue().ranks[0]);
         ENCell.setCellValueFactory(b -> b.getValue().ranks[1]);
@@ -140,7 +149,7 @@ public class DepartmentOverviewController {
 
         School school = schoolListView.getSelectionModel().getSelectedItem();
         DepartmentIdentifier identifier = departmentListView.getSelectionModel().getSelectedItem();
-        Department department = dataReader.getDepartmentFromIdentifier(identifier);
+        Department department = starAPI.getDepartment(identifier);
 
         // Clear favorite list selection, for visual reason
         favorTableView.getSelectionModel().clearSelection();
@@ -148,7 +157,7 @@ public class DepartmentOverviewController {
     }
 
     private void favorTableViewSelected() {
-        BriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
+        ObservableBriefDepartment selectedItem = favorTableView.getSelectionModel().getSelectedItem();
         multiView.getSelectionModel().select(selectedItem);
         if (selectedItem == null) return;
 
@@ -159,7 +168,7 @@ public class DepartmentOverviewController {
     }
 
     private void updateFavoritesList() {
-        favorList.forEach(b -> b.validate(scales));
+        observableFavorList.forEach(b -> b.validate(scales));
         multiView.refresh();
     }
 
@@ -173,11 +182,25 @@ public class DepartmentOverviewController {
         updateFavoritesList();
     }
 
+    private List<DepartmentIdentifier> getDepartmentsWithFilter(int[] scales, School school) {
+        List<DepartmentIdentifier> departments = school.getDepartmentIdentifiers();
+        List<DepartmentIdentifier> toReturn = new ArrayList<>();
+        for (DepartmentIdentifier identifier : departments) {
+            Department department = starAPI.getDepartment(identifier);
+            BriefDepartment briefDepartment = starAPI.getBriefDepartment(school, department);
+            if (ObservableBriefDepartment.validate(scales, briefDepartment)) {
+                toReturn.add(identifier);
+            }
+        }
+
+        return toReturn;
+    }
+
     private void refreshDepartmentList() {
         if (filterEnabled) {
-            departmentListView.getItems().setAll(getSelectedSchool().getDepartmentsWithFilter(scales));
+            departmentListView.getItems().setAll(getDepartmentsWithFilter(scales, getSelectedSchool()));
         } else {
-            departmentListView.getItems().setAll(getSelectedSchool().getDepartments());
+            departmentListView.getItems().setAll(getSelectedSchool().getDepartmentIdentifiers());
         }
     }
 
@@ -202,15 +225,15 @@ public class DepartmentOverviewController {
         if (getSelectedDepartment() == null) return;
         School school = getSelectedSchool();
         Department department = getSelectedDepartment();
-        favorList.add(dataReader.getBriefDepartment(school, department));
+        observableFavorList.add(new ObservableBriefDepartment(starAPI.getBriefDepartment(school, department)));
         updateFavoritesList();
-        dataWriter.writeFavorite(favorList);
+        dataWriter.writeFavorite(observableFavorList);
     }
 
     @FXML
     private void deleteFavorite() {
-        favorList.remove(favorTableView.getSelectionModel().getSelectedItem());
-        dataWriter.writeFavorite(favorList);
+        observableFavorList.remove(favorTableView.getSelectionModel().getSelectedItem());
+        dataWriter.writeFavorite(observableFavorList);
     }
 
     @FXML
@@ -228,6 +251,6 @@ public class DepartmentOverviewController {
     private Department getSelectedDepartment() {
         DepartmentIdentifier identifier = departmentListView.getSelectionModel().getSelectedItem();
         if (identifier == null) return null;
-        return dataReader.getDepartmentFromIdentifier(identifier);
+        return starAPI.getDepartment(identifier);
     }
 }
