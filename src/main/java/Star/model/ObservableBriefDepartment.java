@@ -1,9 +1,12 @@
 package Star.model;
 
-import Star.filter.Filter;
+import Star.StarTelescope;
 import idv.natsucamellia.StarAPI.model.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ObservableBriefDepartment {
 
@@ -12,24 +15,23 @@ public class ObservableBriefDepartment {
     public StringProperty schoolName;
     public StringProperty departmentName;
     public StringProperty valid;
-    public StringProperty[] recruits = new StringProperty[7];
-    public StringProperty[] ranks = new StringProperty[7];
-    public StringProperty[] percents = new StringProperty[7];
+    private final Map<Integer, Integer> admissions = new HashMap<>();
+    private final Map<Integer, Integer> percents = new HashMap<>();
+    private final Map<Subject, Scale> scales = new HashMap<>();
 
-    public String[] ranksRaw;
 
     public ObservableBriefDepartment(BriefDepartment briefDepartment) {
         this.school = briefDepartment.getSchool();
         this.department = briefDepartment.getDepartment();
         this.schoolName = new SimpleStringProperty(school.getName());
         this.departmentName = new SimpleStringProperty(department.getName());
-        this.ranksRaw = briefDepartment.ranksRaw;
-        for (int i = 0; i < 7; i++) {
-            this.ranks[i] = new SimpleStringProperty(ranksRaw[i]);
+        for (int year = StarTelescope.MULTI_START_YEAR; year <= StarTelescope.MULTI_END_YEAR; year++) {
+            admissions.put(year, briefDepartment.getRecruitOfYear(year));
+            percents.put(year, briefDepartment.getPercentOfYear(year));
         }
-        for (int i = 0; i < 7; i++) {
-            this.recruits[i] = new SimpleStringProperty(String.valueOf(briefDepartment.recruits[i]));
-            this.percents[i] = new SimpleStringProperty(briefDepartment.percents[i]);
+        for (Subject subject : Subject.values()) {
+            Scale scale = briefDepartment.getScale(subject);
+            if (scale != Scale.NONE) scales.put(subject, scale);
         }
     }
 
@@ -41,14 +43,35 @@ public class ObservableBriefDepartment {
         return department;
     }
 
-    public boolean validate (int[] scores) {
-        String s = Filter.filter(ranksRaw, scores) ? "O" : "X";
-        valid = new SimpleStringProperty(s);
-        return s.equals("O");
+    public void validate (Map<Subject, Scale> userScales) {
+        boolean pass = true;
+
+        for (Subject subject : userScales.keySet()) {
+            Scale scale = scales.get(subject);
+            if (scale == null) scale = Scale.NONE;
+            Scale userScale = userScales.get(subject);
+            if (userScale == null) userScale = Scale.NONE;
+
+            if (scale.getScore() > userScale.getScore()) {
+                pass = false;
+                break;
+            }
+        }
+
+        valid = new SimpleStringProperty(pass ? "O" : "X");
     }
 
-    public static boolean validate (int[] scores, BriefDepartment briefDepartment) {
-        return Filter.filter(briefDepartment.ranksRaw, scores);
+    public StringProperty getPercentOfYear(int year) {
+        return new SimpleStringProperty(percents.get(year).toString() + '%');
+    }
+
+    public StringProperty getAdmissionsOfYear(int year) {
+        return new SimpleStringProperty(admissions.get(year).toString());
+    }
+
+    public StringProperty getScaleProperty(Subject subject) {
+        Scale scale = scales.get(subject);
+        return scale == null ? new SimpleStringProperty() : new SimpleStringProperty(scale.toString());
     }
 
     public FavoriteIdentifier toFavoriteIdentifier() {

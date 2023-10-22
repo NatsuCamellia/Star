@@ -12,9 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class DepartmentOverviewController {
 
@@ -27,7 +25,7 @@ public class DepartmentOverviewController {
     // 最愛清單
     @FXML
     private TableView<ObservableBriefDepartment> favorTableView;
-    private ObservableList<ObservableBriefDepartment> observableFavorList = FXCollections.observableArrayList();
+    private final ObservableList<ObservableBriefDepartment> observableFavorList = FXCollections.observableArrayList();
     @FXML
     private TableColumn<ObservableBriefDepartment, String> favorSchoolCell, favorDepartmentCell;
 
@@ -63,16 +61,14 @@ public class DepartmentOverviewController {
 
     // 五標篩選
     @FXML
-    private ChoiceBox<String> CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox;
-    private List<ChoiceBox<String>> scoreBoxes;
-    int[] scales = new int[7];
+    private ChoiceBox<Scale> CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox;
+    Map<Subject, Scale> scales = new HashMap<>();
     @FXML
     private CheckBox filterCheckBox;
     boolean filterEnabled = false;
 
     // Fields
     StarAPI starAPI = new StarAPI(
-            StarTelescope.SOLO_START_YEAR,
             StarTelescope.MULTI_END_YEAR,
             StarTelescope.MULTI_START_YEAR,
             StarTelescope.SOLO_END_YEAR);
@@ -95,7 +91,7 @@ public class DepartmentOverviewController {
 
         // Favorite List
         List<BriefDepartment> favorList = starAPI.getFavoriteList(new File(StarTelescope.FAVORITE_PATH));
-        observableFavorList = FXCollections.observableList(favorList.stream().map(ObservableBriefDepartment::new).toList());
+        observableFavorList.addAll((favorList.stream().map(ObservableBriefDepartment::new).toList()));
         favorTableView.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> favorTableViewSelected());
         favorTableView.setItems(observableFavorList);
         favorSchoolCell.setCellValueFactory(b -> b.getValue().schoolName);
@@ -104,43 +100,42 @@ public class DepartmentOverviewController {
         // Multi view
         multiView.setItems(observableFavorList);
         validCell.setCellValueFactory(b -> b.getValue().valid);
-        CNCell.setCellValueFactory(b -> b.getValue().ranks[0]);
-        ENCell.setCellValueFactory(b -> b.getValue().ranks[1]);
-        MACell.setCellValueFactory(b -> b.getValue().ranks[2]);
-        MBCell.setCellValueFactory(b -> b.getValue().ranks[3]);
-        SOCell.setCellValueFactory(b -> b.getValue().ranks[4]);
-        SCCell.setCellValueFactory(b -> b.getValue().ranks[5]);
-        ELCell.setCellValueFactory(b -> b.getValue().ranks[6]);
-        per106Cell.setCellValueFactory(b -> b.getValue().percents[0]);
-        per107Cell.setCellValueFactory(b -> b.getValue().percents[1]);
-        per108Cell.setCellValueFactory(b -> b.getValue().percents[2]);
-        per109Cell.setCellValueFactory(b -> b.getValue().percents[3]);
-        per110Cell.setCellValueFactory(b -> b.getValue().percents[4]);
-        per111Cell.setCellValueFactory(b -> b.getValue().percents[5]);
-        per112Cell.setCellValueFactory(b -> b.getValue().percents[6]);
-        rec106Cell.setCellValueFactory(b -> b.getValue().recruits[0]);
-        rec107Cell.setCellValueFactory(b -> b.getValue().recruits[1]);
-        rec108Cell.setCellValueFactory(b -> b.getValue().recruits[2]);
-        rec109Cell.setCellValueFactory(b -> b.getValue().recruits[3]);
-        rec110Cell.setCellValueFactory(b -> b.getValue().recruits[4]);
-        rec111Cell.setCellValueFactory(b -> b.getValue().recruits[5]);
-        rec112Cell.setCellValueFactory(b -> b.getValue().recruits[6]);
+        CNCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.CHINESE));
+        ENCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.ENGLISH));
+        MACell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.MATH_A));
+        MBCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.MATh_B));
+        SOCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.SOCIAL));
+        SCCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.SCIENCE));
+        ELCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.LISTENING));
+        per106Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(106));
+        per107Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(107));
+        per108Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(108));
+        per109Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(109));
+        per110Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(110));
+        per111Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(111));
+        per112Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(112));
+        rec106Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(106));
+        rec107Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(107));
+        rec108Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(108));
+        rec109Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(109));
+        rec110Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(110));
+        rec111Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(111));
+        rec112Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(112));
 
-        scoreBoxes = Arrays.asList(CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox);
+        List<ChoiceBox<Scale>> scoreBoxes = Arrays.asList(CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox);
         // Primary subjects
-        for (int i = 0; i < scales.length - 1; i++) {
-            scoreBoxes.get(i).getItems().setAll("頂標", "前標", "均標", "後標", "底標", "無標");
+        for (int i = 0; i < scoreBoxes.size() - 1; i++) {
+            scoreBoxes.get(i).getItems().setAll(Scale.TOP, Scale.FRONT, Scale.MEAN, Scale.BACK, Scale.BOTTOM, Scale.NONE);
             scoreBoxes.get(i).getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
             scoreBoxes.get(i).getSelectionModel().select(0);
         }
         // English listening
-        ELBox.getItems().setAll("A", "B", "C", "F", "無成績");
+        ELBox.getItems().setAll(Scale.A, Scale.B, Scale.C, Scale.F, Scale.NONE);
         ELBox.getSelectionModel().selectedItemProperty().addListener((arg0, arg1, arg2) -> updateFilter());
         ELBox.getSelectionModel().select(0);
     }
 
     private void onSchoolListSelect() {
-        School school = schoolListView.getSelectionModel().getSelectedItem();
         refreshDepartmentList();
     }
 
@@ -174,23 +169,33 @@ public class DepartmentOverviewController {
 
     @FXML
     private void updateFilter() {
-        for (int i = 0; i < scales.length; i++) {
-            scales[i] = 5 - scoreBoxes.get(i).getSelectionModel().getSelectedIndex();
-        }
+        scales.put(Subject.CHINESE, CNBox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.ENGLISH, ENBox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.MATH_A, MABox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.MATh_B, MBBox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.SOCIAL, SOBox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.SCIENCE, SCBox.getSelectionModel().getSelectedItem());
+        scales.put(Subject.LISTENING, ELBox.getSelectionModel().getSelectedItem());
         filterEnabled = filterCheckBox.isSelected();
         refreshDepartmentList();
         updateFavoritesList();
     }
 
-    private List<DepartmentIdentifier> getDepartmentsWithFilter(int[] scales, School school) {
+    private List<DepartmentIdentifier> getDepartmentsWithFilter(Map<Subject, Scale> scales, School school) {
         List<DepartmentIdentifier> departments = school.getDepartmentIdentifiers();
         List<DepartmentIdentifier> toReturn = new ArrayList<>();
         for (DepartmentIdentifier identifier : departments) {
             Department department = starAPI.getDepartment(identifier);
-            BriefDepartment briefDepartment = starAPI.getBriefDepartment(school, department);
-            if (ObservableBriefDepartment.validate(scales, briefDepartment)) {
-                toReturn.add(identifier);
+            List<RequirementElement> requirements = department.getResultOfYear(StarTelescope.MULTI_END_YEAR).getRequirementsList();
+            boolean valid = true;
+            for (RequirementElement e : requirements) {
+                if (e.getScale().getScore() > scales.get(e.getSubject()).getScore()) {
+                    valid = false;
+                    break;
+                }
             }
+
+            if (valid) toReturn.add(identifier);
         }
 
         return toReturn;
@@ -225,7 +230,10 @@ public class DepartmentOverviewController {
         if (getSelectedDepartment() == null) return;
         School school = getSelectedSchool();
         Department department = getSelectedDepartment();
-        observableFavorList.add(new ObservableBriefDepartment(starAPI.getBriefDepartment(school, department)));
+        BriefDepartment bd = starAPI.getBriefDepartment(school, department);
+        ObservableBriefDepartment observableBriefDepartment = new ObservableBriefDepartment(bd);
+
+        observableFavorList.add(observableBriefDepartment);
         updateFavoritesList();
         dataWriter.writeFavorite(observableFavorList);
     }
