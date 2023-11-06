@@ -1,11 +1,13 @@
 @font-face {
+    -fx-font-family: "Noto Sans TC Light";
     src: url("/font/NotoSansTC-Light.otf");
 }
 
 .root {
     -fx-font-family: "Noto Sans TC Light";
+    -fx-font-size: 14px;
 }
 
-.label {
-    -fx-font-family: "Noto Sans TC Light";
+.grid-pane {
+    -fx-font-size: 16px;
 }
