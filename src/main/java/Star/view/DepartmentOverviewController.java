@@ -34,9 +34,9 @@ public class DepartmentOverviewController {
     private GridPane soloView;
     @FXML
     private Label
-            rank_109, rank_110, rank_111, rank_112,
-            fil1_109, fil1_110, fil1_111, fil1_112,
-            fil2_109, fil2_110, fil2_111, fil2_112;
+            rank_110, rank_111, rank_112, rank_113,
+            fil1_110, fil1_111, fil1_112, fil1_113,
+            fil2_110, fil2_111, fil2_112, fil2_113;
     private Label[] rankLabels;
     private Label[] fil1Labels;
     private Label[] fil2Labels;
@@ -76,9 +76,9 @@ public class DepartmentOverviewController {
     
     public void initialize() {
         // Solo view
-        rankLabels = new Label[]{rank_109, rank_110, rank_111, rank_112};
-        fil1Labels = new Label[]{fil1_109, fil1_110, fil1_111, fil1_112};
-        fil2Labels = new Label[]{fil2_109, fil2_110, fil2_111, fil2_112};
+        rankLabels = new Label[]{rank_110, rank_111, rank_112, rank_113};
+        fil1Labels = new Label[]{fil1_110, fil1_111, fil1_112, fil1_113};
+        fil2Labels = new Label[]{fil2_110, fil2_111, fil2_112, fil2_113};
 
         // School List
         schoolListView.getItems().setAll(starAPI.getSchoolList());

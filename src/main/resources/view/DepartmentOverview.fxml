@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Star.view.DepartmentOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18star-telescope-1.3.0-beta2-shaded.jar" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Star.view.DepartmentOverviewController">
    <children>
       <HBox prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -69,7 +69,7 @@
                                  <children>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <children>
-                                          <GridPane layoutX="49.0" layoutY="42.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <GridPane layoutX="49.0" layoutY="42.0" prefHeight="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -146,9 +146,9 @@
             </AnchorPane>
             <VBox HBox.hgrow="ALWAYS">
                <children>
-                  <HBox prefHeight="31.0" prefWidth="895.0">
+                  <HBox prefHeight="34.0" prefWidth="900.0">
                      <children>
-                        <ButtonBar buttonMinWidth="0.0" buttonOrder="" maxWidth="195.0" HBox.hgrow="ALWAYS">
+                        <ButtonBar buttonMinWidth="0.0" buttonOrder="" maxWidth="213.0" prefHeight="31.0" prefWidth="213.0" HBox.hgrow="ALWAYS">
                           <buttons>
                             <Button mnemonicParsing="false" onAction="#addFavorite" text="新增到最愛" />
                               <Button mnemonicParsing="false" onAction="#deleteFavorite" text="從最愛刪除" />
@@ -172,7 +172,7 @@
                   </HBox>
                   <StackPane onMouseClicked="#toggleDisplay" VBox.vgrow="ALWAYS">
                      <children>
-                        <GridPane fx:id="soloView" alignment="CENTER" gridLinesVisible="true">
+                        <GridPane fx:id="soloView" alignment="CENTER" gridLinesVisible="true" prefWidth="900.0" styleClass="grid-pane">
                           <columnConstraints>
                             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -187,105 +187,42 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="111" wrapText="true" GridPane.columnIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
-                              </Label>
-                              <Label text="110" wrapText="true" GridPane.columnIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
-                              </Label>
-                              <Label text="109" wrapText="true" GridPane.columnIndex="4">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
-                              </Label>
+                              <Label text="112" wrapText="true" GridPane.columnIndex="2"/>
+                              <Label text="111" wrapText="true" GridPane.columnIndex="3"/>
+                               <Label text="110" wrapText="true" GridPane.columnIndex="4"/>
                               <Label text="名額與檢定門檻" wrapText="true" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
                               </Label>
                               <Label text="第一輪篩選" wrapText="true" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
                               </Label>
                               <Label text="第二輪篩選" wrapText="true" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
                               </Label>
-                              <Label text="112" wrapText="true" GridPane.columnIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label text="113" wrapText="true" GridPane.columnIndex="1">
                               </Label>
-                              <Label fx:id="rank_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="rank_110" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                               </Label>
-                              <Label fx:id="rank_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="rank_111" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                               </Label>
-                              <Label fx:id="rank_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="rank_112" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                               </Label>
-                              <Label fx:id="rank_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="rank_113" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                               </Label>
-                              <Label fx:id="fil1_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil1_113" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                               </Label>
-                              <Label fx:id="fil1_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil1_112" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                               </Label>
-                              <Label fx:id="fil2_112" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil2_113" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                               </Label>
-                              <Label fx:id="fil2_111" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil2_112" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
                               </Label>
-                              <Label fx:id="fil2_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil2_111" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
                               </Label>
-                              <Label fx:id="fil1_110" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil1_111" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
                               </Label>
-                              <Label fx:id="fil1_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil1_110" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
                               </Label>
-                              <Label fx:id="fil2_109" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
+                              <Label fx:id="fil2_110" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
                               </Label>
                               <Label text="年分" wrapText="true">
-                                 <font>
-                                    <Font name="Microsoft JhengHei" size="17.0" />
-                                 </font>
                               </Label>
                            </children>
                            <opaqueInsets>

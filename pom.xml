@@ -89,7 +89,7 @@
         <dependency>
             <groupId>idv.natsucamellia</groupId>
             <artifactId>StarAPI</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </dependency>
     </dependencies>
     
