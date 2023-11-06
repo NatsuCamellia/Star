@@ -214,7 +214,12 @@ public class DepartmentOverviewController {
         int endYear = StarTelescope.SOLO_END_YEAR;
         for (int year = startYear; year <= endYear; year++) {
             Result result = department.getResultOfYear(year);
-            if (result == null) continue;
+            if (result == null) {
+                rankLabels[year - startYear].setText("無資料");
+                fil1Labels[year - startYear].setText("無資料");
+                fil2Labels[year - startYear].setText("無資料");
+                continue;
+            }
             rankLabels[year - startYear].setText(result.getRequirementsString());
             fil1Labels[year - startYear].setText(result.getFilterOneString());
             fil2Labels[year - startYear].setText(result.getFilterTwoString());
