@@ -186,7 +186,7 @@ public class DepartmentOverviewController {
         List<DepartmentIdentifier> toReturn = new ArrayList<>();
         for (DepartmentIdentifier identifier : departments) {
             Department department = starAPI.getDepartment(identifier);
-            List<RequirementElement> requirements = department.getResultOfYear(StarTelescope.MULTI_END_YEAR).getRequirementsList();
+            List<RequirementElement> requirements = department.getResultOfYear(StarTelescope.SOLO_END_YEAR).getRequirementsList();
             boolean valid = true;
             for (RequirementElement e : requirements) {
                 if (e.getScale().getScore() > scales.get(e.getSubject()).getScore()) {
