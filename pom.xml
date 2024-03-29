@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.6</version>
+            <version>17.0.10</version>
         </dependency>
 
         <dependency>
@@ -62,21 +62,15 @@
         </dependency>
 
         <dependency>
-            <groupId>com.opencsv</groupId>
-            <artifactId>opencsv</artifactId>
-            <version>5.7.1</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.6</version>
+            <version>17.0.10</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
-            <version>17.0.6</version>
+            <version>17.0.10</version>
             <classifier>win</classifier>
         </dependency>
 
