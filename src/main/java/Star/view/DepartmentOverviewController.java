@@ -49,8 +49,8 @@ public class DepartmentOverviewController {
     private TableColumn<ObservableBriefDepartment, String>
             validCell,
             CNCell, ENCell, MACell, MBCell, SOCell, SCCell, ELCell,
-            rec106Cell, rec107Cell, rec108Cell, rec109Cell, rec110Cell, rec111Cell, rec112Cell,
-            per106Cell, per107Cell, per108Cell, per109Cell, per110Cell, per111Cell, per112Cell;
+            rec107Cell, rec108Cell, rec109Cell, rec110Cell, rec111Cell, rec112Cell, rec113Cell,
+            per107Cell, per108Cell, per109Cell, per110Cell, per111Cell, per112Cell, per113Cell;
 
     // 導航列
     @FXML
@@ -107,20 +107,20 @@ public class DepartmentOverviewController {
         SOCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.SOCIAL));
         SCCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.SCIENCE));
         ELCell.setCellValueFactory(b -> b.getValue().getScaleProperty(Subject.LISTENING));
-        per106Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(106));
         per107Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(107));
         per108Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(108));
         per109Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(109));
         per110Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(110));
         per111Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(111));
         per112Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(112));
-        rec106Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(106));
+        per113Cell.setCellValueFactory(b -> b.getValue().getPercentOfYear(113));
         rec107Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(107));
         rec108Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(108));
         rec109Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(109));
         rec110Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(110));
         rec111Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(111));
         rec112Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(112));
+        rec113Cell.setCellValueFactory(b -> b.getValue().getAdmissionsOfYear(113));
 
         List<ChoiceBox<Scale>> scoreBoxes = Arrays.asList(CNBox, ENBox, MABox, MBBox, SOBox, SCBox, ELBox);
         // Primary subjects

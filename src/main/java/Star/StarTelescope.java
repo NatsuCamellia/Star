@@ -12,8 +12,8 @@ import java.util.Objects;
 public class StarTelescope extends Application {
 
     // Global settings
-    public static final int MULTI_START_YEAR = 106;
-    public static final int MULTI_END_YEAR = 112;
+    public static final int MULTI_START_YEAR = 107;
+    public static final int MULTI_END_YEAR = 113;
     public static final int SOLO_START_YEAR = 110;
     public static final int SOLO_END_YEAR = 113;
     public static final String FAVORITE_PATH = "favorite.json";
