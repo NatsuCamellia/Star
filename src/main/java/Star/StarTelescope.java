@@ -21,9 +21,9 @@ public class StarTelescope extends Application {
     private Stage primaryStage;
 
     @Override
-    public void start(Stage primaryStage) {     
+    public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("繁星望遠鏡 v1.4.0");
+        this.primaryStage.setTitle("繁星望遠鏡 v1.4.1");
         this.primaryStage.setResizable(true);
         Image icon = new Image(Objects.requireNonNull(StarTelescope.class.getResourceAsStream("/images/icon.png")));
         this.primaryStage.getIcons().add(icon);
